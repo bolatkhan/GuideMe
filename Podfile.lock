@@ -1,12 +1,38 @@
 PODS:
   - AKSideMenu (1.3.1)
+  - Alamofire (4.2.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - DeviceKit (1.0.1)
+  - EasyPeasy (1.4)
+  - Typist (1.0.0)
 
 DEPENDENCIES:
   - AKSideMenu (~> 1.3.1)
+  - Alamofire (~> 4.2.0)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - DeviceKit (~> 1.0)
+  - EasyPeasy
+  - Typist
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   AKSideMenu: 1891ead7606775b9d820884c543ed492e91d276a
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DeviceKit: 461e525867e48e725f41699c1cab3100df1258ff
+  EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
+  Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: f0161f9193e61e51a443ba1e4e77560ba3cfb1be
+PODFILE CHECKSUM: 5fd271f6672ee26c16dea494bf6e03860148549c
 
 COCOAPODS: 1.2.0.rc.1

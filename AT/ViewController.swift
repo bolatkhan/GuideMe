@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import DeviceKit
+import Alamofire
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+   
+    let device = Device()
     var tableView: UITableView = UITableView()
-    var items: [String] = ["Kayindi", "Kolsay", "Charyn", "Kolsay", "Charyn"]
-    
-    
+    var attractions = [[String: AnyObject]]()
+    var stringURL = "http://karibay.pythonanywhere.com/api/places?format=json"
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        downloadTours()
         self.title = "Destinations"
         tableView = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         tableView.delegate = self
@@ -24,50 +28,73 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableView)
         
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: #selector(presentSearchViewController))
-        
-        
+    }
+    // MARK: - Networking
+    func downloadTours() {
+        guard let url = URL(string: stringURL) else {
+            print("url problem")
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+            guard let jsonData = data else {
+                print("no data has been downloaded")
+                return
+            }
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+                    as? [[String: AnyObject]] else { return }
+                    //, let places = json["places"] as? [[String: AnyObject]] else { return }
+                self.attractions = json
+               // print(json)
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            } catch {
+                print("error with JSON: ")
+            }
+        })
+        task.resume()
     }
     func presentSearchViewController() {
         let vc = SearchViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         //self.present(vc, animated: true, completion: nil)
     }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return attractions.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+               
         let identifier = "identifier"
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomTableViewCell
         if (cell == nil) {
             cell = CustomTableViewCell(style: .default, reuseIdentifier: identifier)
         }
-        cell?.imageView?.backgroundColor = .orange
-        cell?.textLabel?.text = items[indexPath.row]
+        let tour = attractions[indexPath.row]
+        cell?.tourName.text = tour["name"] as? String ?? ""
+        cell?.tourShortDescription.text = tour["short_description"] as? String ?? ""
         return cell!
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-        self.navigationController?.pushViewController(DetailViewController(), animated: true)
-        
+        let detailTour = DetailViewController()
+        let tour = attractions[indexPath.row]
+        detailTour.attraction = tour
+        self.navigationController?.pushViewController(detailTour, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0;
+    if device.isPod {
+            return 176;
+        } else if device.isPhone {
+            return 176;
+        } else if device.isPad {
+            return 528;
+        }
+        return 176;
     }
-    
-  
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 }
+
 

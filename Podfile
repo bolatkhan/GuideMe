@@ -4,9 +4,13 @@ platform :ios, '9.0'
 target 'AT' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'AKSideMenu', '~> 1.3.1'
-  # Pods for AT
-
+   # Pods for AT
+   pod 'AKSideMenu', '~> 1.3.1'
+   pod 'EasyPeasy'
+   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+   pod 'Typist'
+   pod 'DeviceKit', '~> 1.0'
+   pod 'Alamofire', '~> 4.2.0'
 end
 
 post_install do |installer|
