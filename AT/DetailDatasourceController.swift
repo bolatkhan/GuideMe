@@ -13,6 +13,7 @@ class DetailDatasourceController: DatasourceController {
     var words = [String: AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.backgroundColor = .gray
         self.title = "Details"
         let detailDatasource = DetailDatasource()
         self.datasource = detailDatasource

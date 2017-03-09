@@ -23,7 +23,7 @@ class AttractionOverviewCell: DatasourceCell {
     
     override func setupViews() {
         super.setupViews()
-        
+        backgroundColor = .white
         addSubview(tourDescription)
        
         tourDescription <- [

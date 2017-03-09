@@ -16,7 +16,7 @@ class DetailDatasource: Datasource {
 //    }
     
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [AttractionImageCell.self, AttractionOverviewCell.self]
+        return [AttractionImageCell.self, AttractionOverviewCell.self, ToursAndActivities.self]
     }
     override func item(_ indexPath: IndexPath) -> Any? {
         return section[indexPath.item]
@@ -25,7 +25,7 @@ class DetailDatasource: Datasource {
         return 1
     }
     override func numberOfSections() -> Int {
-        return 2
+        return 3
             //section.count
     }
     
