@@ -6,6 +6,7 @@ PODS:
     - ChameleonFramework/Default
   - DeviceKit (1.0.1)
   - EasyPeasy (1.4)
+  - LBTAComponents (0.1.9)
   - Typist (1.0.0)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DeviceKit (~> 1.0)
   - EasyPeasy
+  - LBTAComponents (~> 0.1.9)
   - Typist
 
 EXTERNAL SOURCES:
@@ -31,8 +33,9 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DeviceKit: 461e525867e48e725f41699c1cab3100df1258ff
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
+  LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
   Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: 5fd271f6672ee26c16dea494bf6e03860148549c
+PODFILE CHECKSUM: 4cee87cb114cd0a3665e9bc50c75c4032d651562
 
 COCOAPODS: 1.2.0.rc.1

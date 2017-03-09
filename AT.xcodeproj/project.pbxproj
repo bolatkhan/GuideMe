@@ -13,6 +13,7 @@
 		8E02EF331E2E311600AB0CF4 /* AT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E02EF311E2E311600AB0CF4 /* AT.xcdatamodeld */; };
 		8E02EF381E2E311600AB0CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E02EF361E2E311600AB0CF4 /* LaunchScreen.storyboard */; };
 		8E02EF401E2E336E00AB0CF4 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02EF3F1E2E336E00AB0CF4 /* CustomTableViewCell.swift */; };
+		8E0BF9C51E712A0500B0F1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BF9C41E712A0500B0F1BA /* Main.storyboard */; };
 		8E1E3E8D1E5C6F28006CA49F /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E3E8C1E5C6F28006CA49F /* OverviewTableViewCell.swift */; };
 		8E1E3E8F1E5C6F9C006CA49F /* ToursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E3E8E1E5C6F9C006CA49F /* ToursTableViewCell.swift */; };
 		8E1E3EB91E6004EE006CA49F /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */; };
@@ -34,6 +35,7 @@
 		8E02EF371E2E311600AB0CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E02EF391E2E311600AB0CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E02EF3F1E2E336E00AB0CF4 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8E0BF9C31E712A0500B0F1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E1E3E8C1E5C6F28006CA49F /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
 		8E1E3E8E1E5C6F9C006CA49F /* ToursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursTableViewCell.swift; sourceTree = "<group>"; };
 		8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		8E02EF411E2E369200AB0CF4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				8E0BF9C41E712A0500B0F1BA /* Main.storyboard */,
 				8E02EF361E2E311600AB0CF4 /* LaunchScreen.storyboard */,
 				8E02EF391E2E311600AB0CF4 /* Info.plist */,
 				8E02EF311E2E311600AB0CF4 /* AT.xcdatamodeld */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0BF9C51E712A0500B0F1BA /* Main.storyboard in Resources */,
 				8E02EF381E2E311600AB0CF4 /* LaunchScreen.storyboard in Resources */,
 				8EB9A3521E39AB1A00CE0298 /* Assets.xcassets in Resources */,
 			);
@@ -316,6 +320,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		8E0BF9C41E712A0500B0F1BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E0BF9C31E712A0500B0F1BA /* Base */,
+			);
+			name = Main.storyboard;
+			path = "../../../../../Documents/2017.01.17 Starting development/AT/AT";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -359,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -420,7 +433,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = H9RCATFXKX;
 				INFOPLIST_FILE = AT/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = multispace.AT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +449,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = H9RCATFXKX;
 				INFOPLIST_FILE = AT/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = multispace.AT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
