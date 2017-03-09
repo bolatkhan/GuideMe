@@ -19,15 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         // Create content and menu controllers
-        let navigationController: UINavigationController = UINavigationController.init(rootViewController: ViewController.init())
+        let navigationController: UINavigationController = UINavigationController.init(rootViewController: HomeDatasourceController.init())
         let leftMenuViewController = LeftViewController.init()
         
         // Create side menu controller
         let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: leftMenuViewController, rightMenuViewController: UIViewController())
-        
-        
-        
-        
         sideMenuViewController.backgroundImage = UIImage.init(named: "bg")!
         sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyle.lightContent
         sideMenuViewController.delegate = self
@@ -40,12 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
         self.window!.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         return true
-        
-        
-        
-        
-    }
-
+    } 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

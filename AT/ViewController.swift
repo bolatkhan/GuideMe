@@ -11,7 +11,7 @@ import DeviceKit
 import Alamofire
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate {
 
    
     let device = Device()
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.title = "Destinations"
         tableView = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         tableView.delegate = self
-        tableView.dataSource = self
+   //     tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableView)
         
@@ -67,18 +67,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return attractions.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               
-        let identifier = "identifier"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomTableViewCell
-        if (cell == nil) {
-            cell = CustomTableViewCell(style: .default, reuseIdentifier: identifier)
-        }
-        let tour = attractions[indexPath.row]
-        cell?.tourName.text = tour["name"] as? String ?? ""
-        cell?.tourShortDescription.text = tour["short_description"] as? String ?? ""
-        return cell!
-    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//               
+//        let identifier = "identifier"
+//        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomTableViewCell
+//        if (cell == nil) {
+//            cell = CustomTableViewCell(style: .default, reuseIdentifier: identifier)
+//        }
+//        let tour = attractions[indexPath.row]
+//        cell?.tourName.text = tour["name"] as? String ?? ""
+//        cell?.tourShortDescription.text = tour["short_description"] as? String ?? ""
+//        return cell!
+//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailTour = DetailViewController()
         let tour = attractions[indexPath.row]

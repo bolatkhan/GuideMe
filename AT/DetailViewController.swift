@@ -11,7 +11,7 @@ import EasyPeasy
 import DeviceKit
 
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class DetailViewController: UIViewController, UITableViewDelegate{
     
     var attraction = [String: AnyObject]()
     var tours = [[String: AnyObject]]()
@@ -27,8 +27,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.title = "Destinations"
         tableView = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(OverviewTableViewCell.self, forCellReuseIdentifier: OverviewTableViewCell.identifier)
+//        tableView.register(OverviewTableViewCell.self, forCellReuseIdentifier: OverviewTableViewCell.identifier)
         tableView.backgroundColor = .gray
         view.addSubview(tableView)
     }
@@ -52,11 +51,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        }
         return 1
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                        let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as! OverviewTableViewCell
-                cell.tourFullDescription.text = attraction["full_description"] as? String ?? ""
-                return cell
-    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//                        let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as! OverviewTableViewCell
+//                cell.tourFullDescription.text = attraction["full_description"] as? String ?? ""
+//                return cell
+//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }

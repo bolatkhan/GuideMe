@@ -15,7 +15,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DeviceKit (~> 1.0)
   - EasyPeasy
-  - LBTAComponents (~> 0.1.9)
+  - LBTAComponents
   - Typist
 
 EXTERNAL SOURCES:
@@ -36,6 +36,6 @@ SPEC CHECKSUMS:
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
   Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: 4cee87cb114cd0a3665e9bc50c75c4032d651562
+PODFILE CHECKSUM: 99e31a0ba0115499e89bb7a98d2f1f01df30ceab
 
 COCOAPODS: 1.2.0.rc.1

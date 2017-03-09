@@ -1,23 +1,21 @@
 //
-//  CustomTableViewCell.swift
+//  AttractionImagesCell.swift
 //  AT
 //
-//  Created by Askhat Bolatkhan on 1/17/17.
+//  Created by Askhat Bolatkhan on 3/9/17.
 //  Copyright © 2017 Askhat Bolatkhan. All rights reserved.
 //
 
-import UIKit
+import LBTAComponents
 import EasyPeasy
 
-
-class CustomTableViewCell: UITableViewCell {
+class AttractionImageCell: DatasourceCell {
     
     lazy var imgOverlay: UIView = {
         let overlay =  UIView()
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
         return overlay
     }()
-    
     lazy var cellBackgroundImageView: UIImageView = {
         let backgroundImageView = UIImageView()
         backgroundImageView.image = UIImage(named: "bao.jpg")
@@ -47,46 +45,27 @@ class CustomTableViewCell: UITableViewCell {
     }()
 
     
-    private func setupViews(){
-        [imgOverlay].forEach{
-            cellBackgroundImageView.addSubview($0)
-        }
+    override func setupViews() {
+        super.setupViews()
+        backgroundColor = .yellow
         
-        [tourName].forEach{
-            cellBackgroundImageView.addSubview($0)
-        }
-        
-        [tourShortDescription].forEach{
-            cellBackgroundImageView.addSubview($0)
-        }
-        
-        [cellBackgroundImageView].forEach{
-            contentView.addSubview($0)
-        }
-    }
-    
-    private func setupConstraints(){
+        addSubview(cellBackgroundImageView)
+        cellBackgroundImageView.addSubview(imgOverlay)
+        cellBackgroundImageView.addSubview(tourName)
+        cellBackgroundImageView.addSubview(tourShortDescription)
         cellBackgroundImageView <- [
             Edges(0)
         ]
         imgOverlay <- [
             Edges(0)
         ]
-        tourName <- [
+        
+               tourName <- [
             Center()
         ]
         tourShortDescription <- [
             Bottom(5).to(tourName),
             CenterX()
         ]
-   
-    }
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupConstraints()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
