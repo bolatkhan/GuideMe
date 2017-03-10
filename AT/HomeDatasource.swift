@@ -14,7 +14,6 @@ class HomeDatasource: Datasource {
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [FooterCell.self]
     }
-    
     override func cellClasses() -> [DatasourceCell.Type] {
         return [ToursCell.self]
     }
@@ -24,6 +23,4 @@ class HomeDatasource: Datasource {
     override func numberOfItems(_ section: Int) -> Int {
         return words.count
     }
-    
-    
 }

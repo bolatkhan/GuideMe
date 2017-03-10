@@ -30,6 +30,8 @@
 		8E6792801E38764E00F9CDB1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */; };
 		8EB9A34A1E38946700CE0298 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9A3491E38946700CE0298 /* SearchViewController.swift */; };
 		8EB9A3521E39AB1A00CE0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */; };
+		8EBDA9FB1E72705A00571F9C /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FA1E72705A00571F9C /* Attraction.swift */; };
+		8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FC1E7270B300571F9C /* Tour.swift */; };
 		8EE48CEA1E36182C0045DE37 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE48CE91E36182C0045DE37 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		8EB9A3491E38946700CE0298 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EBDA9FA1E72705A00571F9C /* Attraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		8EBDA9FC1E7270B300571F9C /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		8EE48CE91E36182C0045DE37 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A034DC7DC8A2212861FF01D2 /* Pods-AT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.debug.xcconfig"; sourceTree = "<group>"; };
 		E482F0BB719B01305FC9DD88 /* Pods-AT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.release.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 			children = (
 				8E071A561E715795002F8FC6 /* HomeDatasource.swift */,
 				8E071A691E715EF1002F8FC6 /* DetailDatasource.swift */,
+				8EBDA9FC1E7270B300571F9C /* Tour.swift */,
+				8EBDA9FA1E72705A00571F9C /* Attraction.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 				8E071A681E715E7A002F8FC6 /* FirstPageCells.swift in Sources */,
 				8E071A621E715DE4002F8FC6 /* ToursAndActivitiesCell.swift in Sources */,
 				8E071A641E715E03002F8FC6 /* AttractionReviewsCell.swift in Sources */,
+				8EBDA9FB1E72705A00571F9C /* Attraction.swift in Sources */,
+				8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */,
 				8EB9A34A1E38946700CE0298 /* SearchViewController.swift in Sources */,
 				8E071A6A1E715EF1002F8FC6 /* DetailDatasource.swift in Sources */,
 				8E02EF331E2E311600AB0CF4 /* AT.xcdatamodeld in Sources */,

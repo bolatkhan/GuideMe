@@ -9,25 +9,37 @@
 import LBTAComponents
 
 class DetailDatasource: Datasource {
-    let section = ["AtrImage", "AtrOverview", "ToursAndActivities", "Reviews", "Location"]
-    
-//    override func footerClasses() -> [DatasourceCell.Type]? {
+   //    override func footerClasses() -> [DatasourceCell.Type]? {
 //        return [FooterCell.self]
 //    }
     
+    let tours: [Tour] = {
+        let firstTour = Tour(tourImage: #imageLiteral(resourceName: "bao"), name: "Big Almaty Lake", type: "Nature beauty", rating: "*****" , distance: "12km", time: "3 hours", cost: "$20")
+         let secondTour = Tour(tourImage: #imageLiteral(resourceName: "bao"), name: "Big Almaty Lake1", type: "Nature beauty", rating: "*****" , distance: "12km", time: "3 hours", cost: "$20")
+        
+        return [firstTour,secondTour]
+    }()
+    
+    override func footerClasses() -> [DatasourceCell.Type]? {
+        return [FooterCell.self]
+    }
+
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [AttractionImageCell.self, AttractionOverviewCell.self, ToursAndActivities.self]
+        return [AttractionImageCell.self, AttractionOverviewCell.self, ToursAndActivities.self, ReviewCell.self]
     }
     override func item(_ indexPath: IndexPath) -> Any? {
-        return section[indexPath.item]
+        return tours[indexPath.item]
     }
     override func numberOfItems(_ section: Int) -> Int {
+        if section == 2 {
+            return tours.count
+        }
         return 1
     }
     override func numberOfSections() -> Int {
-        return 3
-            //section.count
+        return 4
     }
+
     
     
 }

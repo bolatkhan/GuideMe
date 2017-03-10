@@ -11,14 +11,13 @@ import EasyPeasy
 
 class AttractionOverviewCell: DatasourceCell {
     
-    lazy var tourDescription: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.avenirMedium(fontSize: 14)
-        label.textAlignment = .center
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.text = "Some description Some descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome description"
-        return label
+    lazy var tourDescription: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont.avenirMedium(fontSize: 14)
+        textView.textColor = .black
+        textView.text = "Some description Some descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome description"
+        textView.backgroundColor = .clear
+        return textView
     }()
     
     override func setupViews() {
@@ -26,9 +25,7 @@ class AttractionOverviewCell: DatasourceCell {
         backgroundColor = .white
         addSubview(tourDescription)
        
-        tourDescription <- [
-            Edges(0)
-        ]
+        tourDescription.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 12, leftConstant: 12, bottomConstant: 12, rightConstant: 12, widthConstant: 0, heightConstant: 0)
     }
 }
 
