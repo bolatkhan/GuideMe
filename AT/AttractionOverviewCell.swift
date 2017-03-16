@@ -11,11 +11,14 @@ import EasyPeasy
 
 class AttractionOverviewCell: DatasourceCell {
     
-    lazy var tourDescription: UITextView = {
-        let textView = UITextView()
+   
+    
+    lazy var tourDescription: UILabel = {
+        let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
-        textView.text = "Some description Some descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome description"
+        textView.numberOfLines = 0
+        textView.text = "Some description Some descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptiondescription descriptiondescription description description description description description descriptiondescriptiondescriptiondescription descriptiondescription descriptiondescription descriptiondescriptiondescription descriptiondescriptiondescription descriptiondescription"
         textView.backgroundColor = .clear
         return textView
     }()

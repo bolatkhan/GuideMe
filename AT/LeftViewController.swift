@@ -43,7 +43,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: ViewController.init()), animated: true)
+            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: HomeDatasourceController.init()), animated: true)
             self.sideMenuViewController!.hideMenuViewController()
         case 1:
             self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: SecondViewController.init()), animated: true)

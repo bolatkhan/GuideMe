@@ -19,7 +19,6 @@ class ToursAndActivities: DatasourceCell {
             ratingLabel.text = tour.rating
             distanceLabel.text = tour.distance
             timeLabel.text = tour.time
-            
         }
     }
     
@@ -72,9 +71,8 @@ class ToursAndActivities: DatasourceCell {
         
         separatorLineView.isHidden = false
         separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
-
-        
         backgroundColor = .white
+        
         addSubview(tourImageView)
         addSubview(nameLabel)
         addSubview(typeLabel)
@@ -82,8 +80,7 @@ class ToursAndActivities: DatasourceCell {
         addSubview(distanceLabel)
         addSubview(timeLabel)
         addSubview(costLabel)
-        
-        
+      
         tourImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 104, heightConstant: 104)
         nameLabel.anchor(tourImageView.topAnchor, left: tourImageView.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
         typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)

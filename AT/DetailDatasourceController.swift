@@ -18,18 +18,36 @@ class DetailDatasourceController: DatasourceController {
         let detailDatasource = DetailDatasource()
         self.datasource = detailDatasource
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0{
+            return CGSize(width: view.frame.width, height: 0)
+
+        }
+        return CGSize(width: view.frame.width, height: 24)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == 0  {
+            return CGSize(width: view.frame.width, height: 0)
+        }
         return CGSize(width: view.frame.width, height: 14)
     }
     
-       override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+   
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if (self.datasource?.item(indexPath) as? Tour) != nil {
+            return CGSize(width: view.frame.width, height: 124)
+        }
+        if (self.datasource?.item(indexPath) as? Reviews) != nil {
+            return CGSize(width: view.frame.width, height: 144)
+        }
+
         
+        return CGSize(width: view.frame.width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            return 0
+        return 0
     }
     
     
-
 }

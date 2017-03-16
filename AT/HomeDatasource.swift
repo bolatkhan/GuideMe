@@ -11,9 +11,7 @@ import LBTAComponents
 class HomeDatasource: Datasource {
     let words = ["Tour1", "Tour2", "Tour3"]
     
-    override func footerClasses() -> [DatasourceCell.Type]? {
-        return [FooterCell.self]
-    }
+    
     override func cellClasses() -> [DatasourceCell.Type] {
         return [ToursCell.self]
     }
