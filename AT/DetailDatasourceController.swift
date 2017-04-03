@@ -24,31 +24,42 @@ class DetailDatasourceController: DatasourceController {
         label.numberOfLines = 0
         return label
     }()
-    
     var attraction: Attraction?
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
         collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
         self.title = "Details"
-        guard let attraction = attraction else { return }
-        
-        
-//        let detailDatasource = DetailDatasource()
-//        detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrl: attraction.attractionImageUrl, fullDescription: attraction.fullDescription)]
-//        detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
-//        
-//        self.datasource = detailDatasource
         fetchTourFeed()
-       
-        
     }
     
+    func loadData() {
+        guard let attraction = attraction else { return }
+        let detailDatasource = DetailDatasource()
+        tour.forEach { (tour) in
+            detailDatasource.tours += [Tour(id: tour.id, tourImageUrl: tour.tourImageUrl, name: tour.name, type: tour.type, rating: tour.rating, distance: tour.distance, time: tour.time, cost: tour.cost, placeId: tour.placeId)]
+        }
+        detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrl: attraction.attractionImageUrl, fullDescription: attraction.fullDescription)]
+        detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
+        self.datasource = detailDatasource
+    
+    }
     let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
     
-    class Tour: JSONDecodable{
-    
+    class Tours: JSONDecodable{
+        let tours: [Tour]
         required init(json: JSON) throws {
-             print("Now ready to parse json: \n", json)
+            var tours = [Tour]()
+            let array = json[].array
+            for tourJson in array! {
+                let name = tourJson["name"].stringValue
+                let price = tourJson["price"].intValue
+                let imageUrl = tourJson["avatar"].stringValue
+                let placeId = tourJson["place"].intValue
+                let id = tourJson["id"].intValue
+                let tour = Tour(id: id, tourImageUrl: imageUrl, name: name, type: "", rating: "", distance: "", time: "", cost: price, placeId: placeId)
+                tours.append(tour)
+            }
+            self.tours = tours
         }
     }
     class JSONError: JSONDecodable {
@@ -56,12 +67,14 @@ class DetailDatasourceController: DatasourceController {
             print("JSON ERROR")
         }
     }
-    
     fileprivate func fetchTourFeed(){
-        let request:APIRequest<Tour,JSONError> = tron.request("/api/tours")
+        let request:APIRequest<Tours,JSONError> = tron.request("/api/tours")
         request.parameters = ["place_id":(attraction!.id)]
         request.perform(withSuccess: {(tours) in
             print("Successfully fetched our json object")
+            self.tour = tours.tours
+            self.loadData()
+        
         }) { (err) in
             print("Failed to fetch json..",err)
         }

@@ -42,8 +42,6 @@ class HomeDatasourceController: DatasourceController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: #selector(presentSearchViewController))
     }
-    
-    
     func presentSearchViewController() {
         let vc = SearchViewController()
         self.navigationController?.pushViewController(vc, animated: true)

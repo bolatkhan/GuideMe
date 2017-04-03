@@ -10,12 +10,12 @@ import UIKit
 
 struct Tour {
     let id: Int
-    let tourImage: UIImage
+    let tourImageUrl: String
     let name: String
     let type: String
     let rating: String
     let distance: String
     let time: String
-    let cost: String
+    let cost: Int
     let placeId: Int
 }

@@ -20,10 +20,9 @@ class DetailDatasource: Datasource {
         let overview = Overview(tourDescription: "This is Big Almaty Lake, coolest place near to Almaty. Beauty of Almaty, must have place to visit")
         return [overview]
     }()
-    let tours: [Tour] = {
-        let firstTour = Tour(id: 1, tourImage: #imageLiteral(resourceName: "bao"), name: "Awesome BAO", type: "Nature", rating: "*****", distance: "12", time: "1", cost: "$20", placeId: 1)
-        
-        return [firstTour]
+    var tours: [Tour] = {
+        let firstTour = Tour(id: 0, tourImageUrl:"", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", time: "", cost: 0, placeId: 0)
+        return []
     }()
     
     let reviews: [Reviews] = {
@@ -63,8 +62,6 @@ class DetailDatasource: Datasource {
         if indexPath.section == 3 {
             return reviews[indexPath.item]
         }
-
-        
         return tours[indexPath.item]
     }
     override func numberOfItems(_ section: Int) -> Int {
@@ -92,9 +89,4 @@ class DetailDatasource: Datasource {
         }
         return titles
     }
-
-    
-
-    
-    
 }

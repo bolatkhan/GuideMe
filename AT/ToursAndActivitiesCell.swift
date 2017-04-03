@@ -13,7 +13,7 @@ class ToursAndActivities: DatasourceCell {
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
-            tourImageView.image = tour.tourImage
+//            tourImageView.image = tour.tourImageUrl
             nameLabel.text = tour.name
             typeLabel.text = tour.type
             ratingLabel.text = tour.rating
@@ -24,43 +24,43 @@ class ToursAndActivities: DatasourceCell {
     
     let tourImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "bao")
+//        imageView.image = #imageLiteral(resourceName: "bao")
         imageView.clipsToBounds = true
         return imageView
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Chartyn Canyon"
+        label.text = "Sorry, there is no tours yet"
         return label
     }()
     let typeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Eco Tour"
+        label.text = ""
         return label
     }()
     
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.text = "*****"
+        label.text = ""
         return label
     }()
     
     let distanceLabel: UILabel = {
         let label = UILabel()
-        label.text = "12km"
+        label.text = ""
         return label
     }()
     
     let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "3 hours"
+        label.text = ""
         return label
     }()
     
     let costLabel: UILabel = {
         let label = UILabel()
-        label.text = "$20"
+        label.text = ""
         return label
     }()
 
