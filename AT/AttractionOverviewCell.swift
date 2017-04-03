@@ -11,14 +11,18 @@ import EasyPeasy
 
 class AttractionOverviewCell: DatasourceCell {
     
-   
-    
+    override var datasourceItem: Any?{
+        didSet {
+            guard let attraction = datasourceItem as? Overview else { return }
+            tourDescription.text = attraction.tourDescription
+        }
+    }
     lazy var tourDescription: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.numberOfLines = 0
-        textView.text = "Some description Some descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptionSome descriptiondescription descriptiondescription description description description description description descriptiondescriptiondescriptiondescription descriptiondescription descriptiondescription descriptiondescriptiondescription descriptiondescriptiondescription descriptiondescription"
+        textView.text = "Sorry, some error"
         textView.backgroundColor = .clear
         return textView
     }()

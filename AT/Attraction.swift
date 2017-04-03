@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 struct Attraction {
+    let id: String
     let name: String
-    let profileImage: UIImage
+    let shortDescription: String
+    var attractionImageUrl: String
+    let fullDescription: String
 }
+

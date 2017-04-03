@@ -9,6 +9,7 @@
 import UIKit
 
 struct Tour {
+    let id: Int
     let tourImage: UIImage
     let name: String
     let type: String
@@ -16,4 +17,5 @@ struct Tour {
     let distance: String
     let time: String
     let cost: String
+    let placeId: Int
 }

@@ -10,8 +10,9 @@ target 'AT' do
    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
    pod 'Typist'
    pod 'DeviceKit', '~> 1.0'
-   pod 'Alamofire', '~> 4.2.0'
    pod 'LBTAComponents'
+   pod 'TRON', '~> 2.0.0'
+ 
    
 end
 

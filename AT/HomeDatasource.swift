@@ -7,18 +7,34 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-class HomeDatasource: Datasource {
-    let words = ["Tour1", "Tour2", "Tour3"]
+class HomeDatasource: Datasource, JSONDecodable {
     
+    let attractions: [Attraction]
     
+    required init(json: JSON) throws {
+        var attractions = [Attraction]()
+        let attrArrayJson = json[].array
+        for attrJson in attrArrayJson! {
+            let id = attrJson["id"].stringValue
+            let name = attrJson["name"].stringValue
+            let shortDescription = attrJson["short_description"].stringValue
+            let fullDescription = attrJson["full_description"].stringValue
+            let attractionImageUrls:[String] = (attrJson["images"].arrayObject as? [String])!
+            let attraction = Attraction(id: id, name: name, shortDescription: shortDescription,attractionImageUrl: attractionImageUrls[0], fullDescription: fullDescription )
+            attractions.append(attraction)
+        }
+         self.attractions = attractions
+    }
     override func cellClasses() -> [DatasourceCell.Type] {
         return [ToursCell.self]
     }
     override func item(_ indexPath: IndexPath) -> Any? {
-        return words[indexPath.item]
+        return attractions[indexPath.item]
     }
     override func numberOfItems(_ section: Int) -> Int {
-        return words.count
+        return attractions.count
     }
 }

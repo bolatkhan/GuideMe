@@ -7,24 +7,23 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
 class DetailDatasource: Datasource {
-
-    let images: [Images] = {
-        let images = Images(tourImages: #imageLiteral(resourceName: "bao"))
-        return [images]
+ 
+    var attraction: [Attraction] = {
+        let attraction = Attraction(id:"",name: "", shortDescription: "",attractionImageUrl: "", fullDescription: "")
+        return [attraction]
     }()
-    
-    let overview: [Overview] = {
+    var overview: [Overview] = {
         let overview = Overview(tourDescription: "This is Big Almaty Lake, coolest place near to Almaty. Beauty of Almaty, must have place to visit")
         return [overview]
     }()
     let tours: [Tour] = {
-        let firstTour = Tour(tourImage: #imageLiteral(resourceName: "bao"), name: "Big Almaty Lake", type: "Nature beauty", rating: "*****" , distance: "12km", time: "3 hours", cost: "$20")
-         let secondTour = Tour(tourImage: #imageLiteral(resourceName: "bao"), name: "Big Almaty Lake1", type: "Nature beauty", rating: "*****" , distance: "12km", time: "3 hours", cost: "$20")
-        let thirdTour = Tour(tourImage: #imageLiteral(resourceName: "bao"), name: "Big Almaty Lake1", type: "Nature beauty", rating: "*****" , distance: "12km", time: "3 hours", cost: "$20")
+        let firstTour = Tour(id: 1, tourImage: #imageLiteral(resourceName: "bao"), name: "Awesome BAO", type: "Nature", rating: "*****", distance: "12", time: "1", cost: "$20", placeId: 1)
         
-        return [firstTour,secondTour, thirdTour]
+        return [firstTour]
     }()
     
     let reviews: [Reviews] = {
@@ -40,6 +39,8 @@ class DetailDatasource: Datasource {
 
         return [firstTitle,secondTitle,thirdTitle ]
     }()
+    
+    
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [FooterCell.self]
     }
@@ -51,7 +52,7 @@ class DetailDatasource: Datasource {
     }
     override func item(_ indexPath: IndexPath) -> Any? {
         if indexPath.section == 0 {
-            return images[indexPath.item]
+            return attraction[indexPath.item]
         }
         if indexPath.section == 1 {
             return overview[indexPath.item]
