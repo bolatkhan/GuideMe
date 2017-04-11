@@ -20,7 +20,8 @@ class ToursAndActivities: DatasourceCell {
             typeLabel.text = tour.type
             ratingLabel.text = tour.rating
             distanceLabel.text = tour.distance
-            timeLabel.text = tour.time
+            durationLabel.text = String(tour.duration)+" "+tour.durationType
+            costLabel.text = "$"+String(tour.cost)
         }
     }
     
@@ -53,7 +54,7 @@ class ToursAndActivities: DatasourceCell {
         return label
     }()
     
-    let timeLabel: UILabel = {
+    let durationLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         return label
@@ -73,23 +74,22 @@ class ToursAndActivities: DatasourceCell {
         separatorLineView.isHidden = false
         separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         backgroundColor = .white
-        
         addSubview(tourImageView)
         addSubview(nameLabel)
         addSubview(typeLabel)
         addSubview(ratingLabel)
         addSubview(distanceLabel)
-        addSubview(timeLabel)
+        addSubview(durationLabel)
         addSubview(costLabel)
-      
+        
         tourImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 104, heightConstant: 104)
         nameLabel.anchor(tourImageView.topAnchor, left: tourImageView.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
         typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         ratingLabel.anchor(typeLabel.bottomAnchor, left: typeLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
         distanceLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 20)
-        timeLabel.anchor(ratingLabel.bottomAnchor, left: distanceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        costLabel.anchor(ratingLabel.bottomAnchor, left: timeLabel.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
+        durationLabel.anchor(ratingLabel.bottomAnchor, left: distanceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        costLabel.anchor(ratingLabel.bottomAnchor, left: durationLabel.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
         
     }
 }

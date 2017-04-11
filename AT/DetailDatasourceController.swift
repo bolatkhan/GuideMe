@@ -30,7 +30,7 @@ class DetailDatasourceController: DatasourceController {
         guard let attraction = attraction else { return }
         let detailDatasource = DetailDatasource()
         tour.forEach { (tour) in
-            detailDatasource.tours += [Tour(id: tour.id, tourImageUrl: tour.tourImageUrl, name: tour.name, type: tour.type, rating: tour.rating, distance: tour.distance, time: tour.time, cost: tour.cost, placeId: tour.placeId)]
+            detailDatasource.tours += [Tour(id: tour.id, tourImageUrl: tour.tourImageUrl, name: tour.name, type: tour.type, rating: tour.rating, distance: tour.distance, durationType: tour.durationType, duration: tour.duration, cost: tour.cost, placeId: tour.placeId)]
         }
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrl: attraction.attractionImageUrl, fullDescription: attraction.fullDescription)]
         detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
@@ -48,7 +48,9 @@ class DetailDatasourceController: DatasourceController {
                 let imageUrl = tourJson["avatar"].stringValue
                 let placeId = tourJson["place"].intValue
                 let id = tourJson["id"].intValue
-                let tour = Tour(id: id, tourImageUrl: imageUrl, name: name, type: "", rating: "", distance: "", time: "", cost: price, placeId: placeId)
+                let durationType = tourJson["duration_type"].stringValue
+                let duration = tourJson["duration"].intValue
+                let tour = Tour(id: id, tourImageUrl: imageUrl, name: name, type: "", rating: "", distance: "", durationType: durationType, duration: duration , cost: price, placeId: placeId)
                 tours.append(tour)
             }
             self.tours = tours

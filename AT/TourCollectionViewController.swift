@@ -10,87 +10,103 @@ import UIKit
 import EasyPeasy
 import LBTAComponents
 
-
-private let reuseIdentifier = "Cell"
-
 class TourViewController: UIViewController {
 
     var tour: Tour?
-    let detailDatasource = DetailDatasource()
     
-    
-    
-    var overview: UITextView = {
-        let textView = UITextView()
-        textView.font = UIFont.avenirMedium(fontSize: 14)
-        textView.textColor = .black
-        textView.text = "Sorry, some error"
-        textView.backgroundColor = .clear
-        textView.isEditable = false
-        return textView
+    let tourImageView: CachedImageView = {
+        let imageView = CachedImageView()
+        imageView.clipsToBounds = true
+        return imageView
     }()
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sorry, there is no tours yet"
+        label.font = UIFont.avenirMedium(fontSize: 32)
+        return label
+    }()
+    let typeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Almaty Region, Kazakhstan"
+        label.font = UIFont.avenirMedium(fontSize: 24)
+        return label
+    }()
+    
+    let ratingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "*****"
+        return label
+    }()
+    
+    let distanceLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        return label
+    }()
+    
+    let durationLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        return label
+    }()
+    
+    let costLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        return label
+    }()
+
+    
+    private func setupViews() {
+        self.title = "Detail Overview"
+        view.addSubview(tourImageView)
+        view.addSubview(nameLabel)
+        view.addSubview(typeLabel)
+        view.addSubview(ratingLabel)
+        view.addSubview(distanceLabel)
+        view.addSubview(durationLabel)
+        view.addSubview(costLabel)
+    }
+    private func setupConstraints(){
+        tourImageView <- [
+            Height(200),
+            Top(64),
+            Right(0),
+            Left(0)
+        ]
+        
+        nameLabel <- [
+            Height(32),
+            Top(274),
+            Right(20),
+            Left(20)
+        ]
+        
+        typeLabel <- [
+            Height(28),
+            Top(8).to(nameLabel),
+            Right(20),
+            Left(20)
+        ]
+        ratingLabel <- [
+            Height(20),
+            Top(12).to(typeLabel),
+            Right(20),
+            Left(20)
+        ]
+
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        overview.text = tour?.name
-        self.title = "Detail Overview"
-        view.addSubview(overview)
         view.backgroundColor = .white
-        overview <- [
-            Edges(5)
-        ]
+        nameLabel.text = tour?.name
+        tourImageView.loadImage(urlString: "http://karibay.pythonanywhere.com/"+(tour?.tourImageUrl)!)
+        setupViews()
+        setupConstraints()
+
     }
-
-    // MARK: UICollectionViewDataSource
-
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of items
-//        return 0
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-//    
-//        // Configure the cell
-//    
-//        return cell
-//    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
-
 }

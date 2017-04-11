@@ -18,7 +18,6 @@ class ReviewCell: DatasourceCell {
             ratingLabel.text = review.rating
             dateLabel.text = review.date
             reviewLabel.text = review.review
-            
         }
     }
     let profileImageView: UIImageView = {
@@ -38,13 +37,11 @@ class ReviewCell: DatasourceCell {
         label.text = ""
         return label
     }()
-    
     let dateLabel: UILabel = {
         let label = UILabel()
         label.text = "March 2017"
         return label
     }()
-    
     let reviewLabel: UILabel = {
         let label = UILabel()
         label.text = "Awesome place to see"
@@ -59,7 +56,6 @@ class ReviewCell: DatasourceCell {
         addSubview(ratingLabel)
         addSubview(dateLabel)
         addSubview(reviewLabel)
-        
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 70, heightConstant: 70)
         nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
         ratingLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)

@@ -15,7 +15,8 @@ struct Tour {
     let type: String
     let rating: String
     let distance: String
-    let time: String
+    let durationType: String
+    let duration: Int
     let cost: Int
     let placeId: Int
 }
