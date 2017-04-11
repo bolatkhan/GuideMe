@@ -17,6 +17,12 @@ class SecondViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: #selector(presentSearchViewController))
         
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         let button: UIButton = UIButton.init(type: UIButtonType.roundedRect)
         button.frame = CGRect(x: 0, y: 84, width: self.view.frame.size.width, height: 44)
         button.autoresizingMask = UIViewAutoresizing.flexibleWidth
@@ -39,11 +45,11 @@ class SecondViewController: UIViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSLog("SecondViewController will appear")
+//        NSLog("SecondViewController will appear")
     }
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSLog("SecondViewController will disappear")
+//        NSLog("SecondViewController will disappear")
     }
     
 }

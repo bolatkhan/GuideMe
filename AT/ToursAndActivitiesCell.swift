@@ -9,11 +9,13 @@
 import LBTAComponents
 
 class ToursAndActivities: DatasourceCell {
-    
+    var staticURL = "http://karibay.pythonanywhere.com/"
+
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
-//            tourImageView.image = tour.tourImageUrl
+            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrl)
+            print(staticURL+tour.tourImageUrl)
             nameLabel.text = tour.name
             typeLabel.text = tour.type
             ratingLabel.text = tour.rating
@@ -22,9 +24,8 @@ class ToursAndActivities: DatasourceCell {
         }
     }
     
-    let tourImageView: UIImageView = {
-        let imageView = UIImageView()
-//        imageView.image = #imageLiteral(resourceName: "bao")
+    let tourImageView: CachedImageView = {
+        let imageView = CachedImageView()
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -89,11 +90,6 @@ class ToursAndActivities: DatasourceCell {
         distanceLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 20)
         timeLabel.anchor(ratingLabel.bottomAnchor, left: distanceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         costLabel.anchor(ratingLabel.bottomAnchor, left: timeLabel.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
-        
-        
-        
-        
-        
         
     }
 }

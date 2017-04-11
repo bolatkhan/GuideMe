@@ -21,13 +21,13 @@ class DetailDatasource: Datasource {
         return [overview]
     }()
     var tours: [Tour] = {
-        let firstTour = Tour(id: 0, tourImageUrl:"", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", time: "", cost: 0, placeId: 0)
+        let firstTour = Tour(id: 0, tourImageUrl: "", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", time: "", cost: 0, placeId: 0)
         return []
     }()
     
     let reviews: [Reviews] = {
-         let firstReview = Reviews(profileImageView: #imageLiteral(resourceName: "me"), nameLabel: "Askhat", rating: "*****", date: "16 Mar", review: "Good place to visit!!!")
-        let secReview = Reviews(profileImageView: #imageLiteral(resourceName: "me"), nameLabel: "Askhat", rating: "*****", date: "16 Mar", review: "Good place to visit!!!")
+         let firstReview = Reviews(profileImageView: #imageLiteral(resourceName: "userpic"), nameLabel: "Askhat Bolatkhan", rating: "*****", date: "16 Mar", review: "Good place to visit!!!")
+        let secReview = Reviews(profileImageView: #imageLiteral(resourceName: "baha"), nameLabel: "Bakhtiyar Sadabaev", rating: "*****", date: "11 April", review: "Awesome view!")
         return [firstReview, secReview]
     }()
     

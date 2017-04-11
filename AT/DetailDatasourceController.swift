@@ -9,13 +9,8 @@
 import LBTAComponents
 import SwiftyJSON
 import TRON
-
-
-
 class DetailDatasourceController: DatasourceController {
-    
     var tour = [Tour]()
-
     let errorMessageLabel: UILabel = {
         let label = UILabel()
         label.text = "Apologies something went wrong. Please try again later... "
@@ -31,7 +26,6 @@ class DetailDatasourceController: DatasourceController {
         self.title = "Details"
         fetchTourFeed()
     }
-    
     func loadData() {
         guard let attraction = attraction else { return }
         let detailDatasource = DetailDatasource()
@@ -41,10 +35,8 @@ class DetailDatasourceController: DatasourceController {
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrl: attraction.attractionImageUrl, fullDescription: attraction.fullDescription)]
         detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
         self.datasource = detailDatasource
-    
     }
     let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
-    
     class Tours: JSONDecodable{
         let tours: [Tour]
         required init(json: JSON) throws {
@@ -71,7 +63,6 @@ class DetailDatasourceController: DatasourceController {
         let request:APIRequest<Tours,JSONError> = tron.request("/api/tours")
         request.parameters = ["place_id":(attraction!.id)]
         request.perform(withSuccess: {(tours) in
-            print("Successfully fetched our json object")
             self.tour = tours.tours
             self.loadData()
         
@@ -108,6 +99,12 @@ class DetailDatasourceController: DatasourceController {
             let vc = OverviewViewController()
             vc.overviewText = attraction?.fullDescription ?? ""
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 2 {
+                let vc = TourViewController()
+                let tour = self.tour[indexPath.row]
+                vc.tour = tour
+                self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

@@ -9,12 +9,9 @@ import LBTAComponents
 import EasyPeasy
 import UIKit
 
-
 class OverviewViewController: UIViewController {
-
     var overviewText = ""
     var detailDatasource = DetailDatasource()
-    
     var overview: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 14)
@@ -24,7 +21,6 @@ class OverviewViewController: UIViewController {
         textView.isEditable = false
         return textView
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detail Overview"

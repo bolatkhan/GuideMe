@@ -74,7 +74,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.selectedBackgroundView = UIView.init()
         }
         
-        var titles: [String] = ["Home", "Proile", "Favorites", "Settings", "Log Out"]
+        var titles: [String] = ["Home", "", "", "", ""]
         var images: [String] = ["", "", "", "", ""]
         cell!.textLabel?.text = titles[(indexPath as NSIndexPath).row]
         cell!.imageView?.image = UIImage.init(named: images[(indexPath as NSIndexPath).row])

@@ -11,9 +11,7 @@ import TRON
 import SwiftyJSON
 
 class HomeDatasource: Datasource, JSONDecodable {
-    
     let attractions: [Attraction]
-    
     required init(json: JSON) throws {
         var attractions = [Attraction]()
         let attrArrayJson = json[].array

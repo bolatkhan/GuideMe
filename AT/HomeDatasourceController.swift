@@ -9,12 +9,10 @@
 import LBTAComponents
 import TRON
 import SwiftyJSON
-
+import UIKit
 
 class HomeDatasourceController: DatasourceController {
-    
     var attractions = [Attraction]()
-
     let errorMessageLabel: UILabel = {
         let label = UILabel()
         label.text = "Apologies something went wrong. Please try again later... "
@@ -23,13 +21,10 @@ class HomeDatasourceController: DatasourceController {
         label.numberOfLines = 0
         return label
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(errorMessageLabel)
         errorMessageLabel.fillSuperview()
-        
         self.title = "Destinations"
         Service.sharedInstance.fetchHomeFeed{(homeDatasource,err) in
             if let _ = err {
@@ -41,6 +36,11 @@ class HomeDatasourceController: DatasourceController {
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: #selector(presentSearchViewController))
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     func presentSearchViewController() {
         let vc = SearchViewController()

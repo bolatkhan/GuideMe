@@ -38,6 +38,7 @@
 		8EB9A3521E39AB1A00CE0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */; };
 		8EBDA9FB1E72705A00571F9C /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FA1E72705A00571F9C /* Attraction.swift */; };
 		8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FC1E7270B300571F9C /* Tour.swift */; };
+		8EBEE2FF1E9C9F5A006ED508 /* TourCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEE2FE1E9C9F5A006ED508 /* TourCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EBDA9FA1E72705A00571F9C /* Attraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		8EBDA9FC1E7270B300571F9C /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		8EBEE2FE1E9C9F5A006ED508 /* TourCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourCollectionViewController.swift; sourceTree = "<group>"; };
 		A034DC7DC8A2212861FF01D2 /* Pods-AT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.debug.xcconfig"; sourceTree = "<group>"; };
 		E482F0BB719B01305FC9DD88 /* Pods-AT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.release.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 				8E0BF9C61E71332000B0F1BA /* HomeDatasourceController.swift */,
 				8E071A581E715977002F8FC6 /* DetailDatasourceController.swift */,
 				8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */,
+				8EBEE2FE1E9C9F5A006ED508 /* TourCollectionViewController.swift */,
 				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
 				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
 				8E3DC59B1E3EEB8000FD7E8A /* SecondViewController.swift */,
@@ -345,6 +348,7 @@
 			files = (
 				8E7868AE1E7A9A200094C2C4 /* Overview.swift in Sources */,
 				8E3DC59C1E3EEB8000FD7E8A /* SecondViewController.swift in Sources */,
+				8EBEE2FF1E9C9F5A006ED508 /* TourCollectionViewController.swift in Sources */,
 				8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */,
 				8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */,
 				8E071A571E715795002F8FC6 /* HomeDatasource.swift in Sources */,
