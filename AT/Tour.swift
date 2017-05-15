@@ -10,13 +10,27 @@ import UIKit
 
 struct Tour {
     let id: Int
+    let typeName: String
+    let typeIconUrl: String
+    let hostName: String
+    let hostLogoUrl: String
+    let hostNumber: Int
+    let hostDescription: String
     let tourImageUrl: String
+    let connectedPlaces: String
+    
     let name: String
-    let type: String
-    let rating: String
-    let distance: String
-    let durationType: String
-    let duration: Int
-    let cost: Int
-    let placeId: Int
+    let amountOfPeople: String
+    let duration: String
+    let whatWeWillDo: String
+    let generalInfo: String
+    
+    let pricePerPerson: Int
+    let departsAt: String
+    let languages: String
+    let whatToWear: String
+    let priceIncludes: String
+    let priceExcludes: String
+    
+    
 }

@@ -12,6 +12,8 @@ target 'AT' do
    pod 'DeviceKit', '~> 1.0'
    pod 'LBTAComponents'
    pod 'TRON', '~> 2.0.0'
+   pod 'Device', '~> 3.0.1'
+   pod 'Reusable'
  
    
 end

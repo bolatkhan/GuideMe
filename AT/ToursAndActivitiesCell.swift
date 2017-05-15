@@ -15,7 +15,6 @@ class ToursAndActivities: DatasourceCell {
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
             tourImageView.loadImage(urlString: staticURL+tour.tourImageUrl)
-            print(staticURL+tour.tourImageUrl)
             nameLabel.text = tour.name
             typeLabel.text = tour.type
             ratingLabel.text = tour.rating
@@ -38,31 +37,31 @@ class ToursAndActivities: DatasourceCell {
     }()
     let typeLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "Nature Landmarks"
         return label
     }()
     
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "*****"
         return label
     }()
     
     let distanceLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "12"
         return label
     }()
     
     let durationLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "2"
         return label
     }()
     
     let costLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "20"
         return label
     }()
 

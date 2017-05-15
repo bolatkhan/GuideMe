@@ -35,17 +35,18 @@ class HomeDatasourceController: DatasourceController {
             self.attractions = (homeDatasource?.attractions)!
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: #selector(presentSearchViewController))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: nil )
+//        #selector(presentSearchViewController)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
     }
-    func presentSearchViewController() {
-        let vc = SearchViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    func presentSearchViewController() {
+//        let vc = SearchViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailTour = DetailDatasourceController()
         let attraction =  attractions[indexPath.row]

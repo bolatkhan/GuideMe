@@ -30,7 +30,7 @@ class DetailDatasourceController: DatasourceController {
         guard let attraction = attraction else { return }
         let detailDatasource = DetailDatasource()
         tour.forEach { (tour) in
-            detailDatasource.tours += [Tour(id: tour.id, tourImageUrl: tour.tourImageUrl, name: tour.name, type: tour.type, rating: tour.rating, distance: tour.distance, durationType: tour.durationType, duration: tour.duration, cost: tour.cost, placeId: tour.placeId)]
+            detailDatasource.tours += [Tour(id: tour.id, tourImageUrl: tour.tourImageUrl, name: tour.name, type: tour.type, rating: tour.rating, distance: tour.distance, durationType: tour.durationType, duration: tour.duration, cost: tour.cost, placeId: tour.placeId, numberOfPeople: tour.numberOfPeople, description: tour.description)]
         }
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrl: attraction.attractionImageUrl, fullDescription: attraction.fullDescription)]
         detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
@@ -45,12 +45,20 @@ class DetailDatasourceController: DatasourceController {
             for tourJson in array! {
                 let name = tourJson["name"].stringValue
                 let price = tourJson["price"].intValue
-                let imageUrl = tourJson["avatar"].stringValue
+                let imageUrl = tourJson["tour_images"].arrayValue
+                let urlString = String(describing: imageUrl[0])
                 let placeId = tourJson["place"].intValue
                 let id = tourJson["id"].intValue
                 let durationType = tourJson["duration_type"].stringValue
-                let duration = tourJson["duration"].intValue
-                let tour = Tour(id: id, tourImageUrl: imageUrl, name: name, type: "", rating: "", distance: "", durationType: durationType, duration: duration , cost: price, placeId: placeId)
+                let duration = tourJson["duration"].stringValue
+                let numberOfPeople = tourJson["amount_of_people"].stringValue
+                let description = tourJson["description"].stringValue
+                let tourType = tourJson["type"].object
+                let tourHost = tourJson["host"].dictionary
+                let hostName = tourHost?["name"]?.stringValue
+               
+                
+                let tour = Tour(id: id, tourImageUrl: urlString, name: name, type: "Nature Landmarks", rating: "*****", distance: "12km", durationType: durationType, duration: duration , cost: price, placeId: placeId, numberOfPeople: numberOfPeople, description: description)
                 tours.append(tour)
             }
             self.tours = tours

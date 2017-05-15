@@ -17,7 +17,7 @@ class ToursCell: DatasourceCell {
             guard let attraction = datasourceItem as? Attraction else { return }
             tourName.text = attraction.name
             tourShortDescription.text = attraction.shortDescription
-            cellBackgroundImageView.loadImage(urlString: staticURL+attraction.attractionImageUrl)
+            cellBackgroundImageView.loadImage(urlString: staticURL+attraction.attractionImageUrl!)
         }
     }
     
@@ -57,7 +57,7 @@ class ToursCell: DatasourceCell {
     
     override func setupViews() {
         super.setupViews()
-        backgroundColor = .yellow
+        backgroundColor = .black
         
         addSubview(cellBackgroundImageView)
         cellBackgroundImageView.addSubview(imgOverlay)
@@ -71,7 +71,9 @@ class ToursCell: DatasourceCell {
             Edges(0)
         ]
         tourName <- [
-            Center()
+            Center(),
+            Left(12),
+            Right(12)
         ]
         tourShortDescription <- [
             Bottom(5).to(tourName),

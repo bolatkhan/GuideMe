@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import EasyPeasy
+
 
 class SearchViewController: UIViewController {
+    
+    let text = "Coming soon.."
+    
+    let labelView: UILabel = {
+        var labelView = UILabel()
+        return labelView
+        
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Search Controller"
-        // Do any additional setup after loading the view.
+        view.addSubview(labelView)
+        labelView.text = text
         view.backgroundColor = .white
+        labelView <- [
+            Center()
+        ]
+        
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
   
 }

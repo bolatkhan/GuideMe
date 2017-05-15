@@ -4,9 +4,15 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Device (3.0.1)
   - DeviceKit (1.0.1)
   - EasyPeasy (1.4)
   - LBTAComponents (0.1.9)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
   - SwiftyJSON (3.1.4)
   - TRON (2.0.1):
     - Alamofire (~> 4.1)
@@ -22,9 +28,11 @@ PODS:
 DEPENDENCIES:
   - AKSideMenu (~> 1.3.1)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Device (~> 3.0.1)
   - DeviceKit (~> 1.0)
   - EasyPeasy
   - LBTAComponents
+  - Reusable
   - TRON (~> 2.0.0)
   - Typist
 
@@ -41,13 +49,15 @@ SPEC CHECKSUMS:
   AKSideMenu: 1891ead7606775b9d820884c543ed492e91d276a
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Device: c793851589633bc515b65e08a2b5a223bc87c45a
   DeviceKit: 461e525867e48e725f41699c1cab3100df1258ff
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TRON: 7b9adeb678fe0e25433d207f6a734aaf145fa9b5
   Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: d7a0ae25992720a097db9a03e48d812e8304ebb7
+PODFILE CHECKSUM: 46db8614e262ce1c78244a17b966decf840a1abd
 
-COCOAPODS: 1.2.0.rc.1
+COCOAPODS: 1.2.0

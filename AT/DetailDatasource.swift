@@ -11,7 +11,6 @@ import TRON
 import SwiftyJSON
 
 class DetailDatasource: Datasource {
- 
     var attraction: [Attraction] = {
         let attraction = Attraction(id:"",name: "", shortDescription: "",attractionImageUrl: "", fullDescription: "")
         return [attraction]
@@ -21,10 +20,9 @@ class DetailDatasource: Datasource {
         return [overview]
     }()
     var tours: [Tour] = {
-        let firstTour = Tour(id: 0, tourImageUrl: "", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", durationType: "", duration: 0, cost: 0, placeId: 0)
+        let firstTour = Tour(id: 0, tourImageUrl: "", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", durationType: "", duration: "", cost: 0, placeId: 0, numberOfPeople: "", description: "")
         return []
     }()
-    
     let reviews: [Reviews] = {
          let firstReview = Reviews(profileImageView: #imageLiteral(resourceName: "userpic"), nameLabel: "Askhat Bolatkhan", rating: "*****", date: "March 2017", review: "Good place to visit!!!")
         let secReview = Reviews(profileImageView: #imageLiteral(resourceName: "baha"), nameLabel: "Bakhtiyar Sadabaev", rating: "*****", date: "April 2017", review: "Awesome view!")
@@ -38,8 +36,6 @@ class DetailDatasource: Datasource {
 
         return [firstTitle,secondTitle,thirdTitle ]
     }()
-    
-    
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [FooterCell.self]
     }
@@ -47,7 +43,8 @@ class DetailDatasource: Datasource {
         return[HeaderCell.self]
     }
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [AttractionImageCell.self, AttractionOverviewCell.self, ToursAndActivities.self, ReviewCell.self]
+        return [AttractionImageCell.self, AttractionOverviewCell.self, ToursAndActivities.self]
+//        ReviewCell.self
     }
     override func item(_ indexPath: IndexPath) -> Any? {
         if indexPath.section == 0 {
@@ -74,9 +71,8 @@ class DetailDatasource: Datasource {
         return 1
     }
     override func numberOfSections() -> Int {
-        return 4
+        return 3
     }
-    
     override func headerItem(_ section: Int) -> Any? {
         if section == 1 {
             return titles[0]

@@ -23,6 +23,9 @@
 		8E0BF9C51E712A0500B0F1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BF9C41E712A0500B0F1BA /* Main.storyboard */; };
 		8E0BF9C71E71332000B0F1BA /* HomeDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0BF9C61E71332000B0F1BA /* HomeDatasourceController.swift */; };
 		8E1E3EB91E6004EE006CA49F /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */; };
+		8E1FFE951EAA07A300470D7B /* BookNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */; };
+		8E2811111EA4A26F00DAD76F /* AboutHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811101EA4A26F00DAD76F /* AboutHostView.swift */; };
+		8E2811131EA4D9B400DAD76F /* MainDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */; };
 		8E3DC59C1E3EEB8000FD7E8A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC59B1E3EEB8000FD7E8A /* SecondViewController.swift */; };
 		8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC59E1E41A06D00FD7E8A /* Tints.swift */; };
 		8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC5A01E41A25100FD7E8A /* Avenir.swift */; };
@@ -33,6 +36,15 @@
 		8E7868AE1E7A9A200094C2C4 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7868AD1E7A9A200094C2C4 /* Overview.swift */; };
 		8E7868B01E7A9C760094C2C4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7868AF1E7A9C760094C2C4 /* Images.swift */; };
 		8E7868B21E7AA1330094C2C4 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7868B11E7AA1330094C2C4 /* Reviews.swift */; };
+		8E8C08BC1EA62D8500B06616 /* WhatWeWillDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08BB1EA62D8500B06616 /* WhatWeWillDoView.swift */; };
+		8E8C08BE1EA6313900B06616 /* WhereWillBeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08BD1EA6313900B06616 /* WhereWillBeView.swift */; };
+		8E8C08C11EA71D7D00B06616 /* DetailsPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08C01EA71D7D00B06616 /* DetailsPriceView.swift */; };
+		8E8C08C31EA72BA700B06616 /* DetailDepartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08C21EA72BA700B06616 /* DetailDepartView.swift */; };
+		8E8C08C51EA72F4E00B06616 /* DetailLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08C41EA72F4E00B06616 /* DetailLanguageView.swift */; };
+		8E8C08C71EA731DA00B06616 /* DetailTransportationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08C61EA731DA00B06616 /* DetailTransportationView.swift */; };
+		8E8C08C91EA74EC700B06616 /* DetailReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08C81EA74EC700B06616 /* DetailReviewView.swift */; };
+		8E8C08CB1EA751B700B06616 /* PriceIncludesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08CA1EA751B700B06616 /* PriceIncludesView.swift */; };
+		8E8C08CD1EA7679500B06616 /* PriceExcludesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C08CC1EA7679500B06616 /* PriceExcludesView.swift */; };
 		8E8D0A741E7C0B6B00E7104C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D0A731E7C0B6B00E7104C /* Service.swift */; };
 		8EB9A34A1E38946700CE0298 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9A3491E38946700CE0298 /* SearchViewController.swift */; };
 		8EB9A3521E39AB1A00CE0298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */; };
@@ -60,6 +72,9 @@
 		8E0BF9C31E712A0500B0F1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E0BF9C61E71332000B0F1BA /* HomeDatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasourceController.swift; sourceTree = "<group>"; };
 		8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookNowViewController.swift; sourceTree = "<group>"; };
+		8E2811101EA4A26F00DAD76F /* AboutHostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutHostView.swift; sourceTree = "<group>"; };
+		8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDescriptionView.swift; sourceTree = "<group>"; };
 		8E3DC59B1E3EEB8000FD7E8A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8E3DC59E1E41A06D00FD7E8A /* Tints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tints.swift; sourceTree = "<group>"; };
 		8E3DC5A01E41A25100FD7E8A /* Avenir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avenir.swift; sourceTree = "<group>"; };
@@ -70,6 +85,15 @@
 		8E7868AD1E7A9A200094C2C4 /* Overview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		8E7868AF1E7A9C760094C2C4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8E7868B11E7AA1330094C2C4 /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		8E8C08BB1EA62D8500B06616 /* WhatWeWillDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatWeWillDoView.swift; sourceTree = "<group>"; };
+		8E8C08BD1EA6313900B06616 /* WhereWillBeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereWillBeView.swift; sourceTree = "<group>"; };
+		8E8C08C01EA71D7D00B06616 /* DetailsPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsPriceView.swift; sourceTree = "<group>"; };
+		8E8C08C21EA72BA700B06616 /* DetailDepartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDepartView.swift; sourceTree = "<group>"; };
+		8E8C08C41EA72F4E00B06616 /* DetailLanguageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLanguageView.swift; sourceTree = "<group>"; };
+		8E8C08C61EA731DA00B06616 /* DetailTransportationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransportationView.swift; sourceTree = "<group>"; };
+		8E8C08C81EA74EC700B06616 /* DetailReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailReviewView.swift; sourceTree = "<group>"; };
+		8E8C08CA1EA751B700B06616 /* PriceIncludesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceIncludesView.swift; sourceTree = "<group>"; };
+		8E8C08CC1EA7679500B06616 /* PriceExcludesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceExcludesView.swift; sourceTree = "<group>"; };
 		8E8D0A731E7C0B6B00E7104C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8EB9A3491E38946700CE0298 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8EB9A3511E39AB1A00CE0298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +177,24 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		8E8C08BF1EA71D3F00B06616 /* TourViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */,
+				8E2811101EA4A26F00DAD76F /* AboutHostView.swift */,
+				8E8C08BB1EA62D8500B06616 /* WhatWeWillDoView.swift */,
+				8E8C08BD1EA6313900B06616 /* WhereWillBeView.swift */,
+				8E8C08C01EA71D7D00B06616 /* DetailsPriceView.swift */,
+				8E8C08C21EA72BA700B06616 /* DetailDepartView.swift */,
+				8E8C08C41EA72F4E00B06616 /* DetailLanguageView.swift */,
+				8E8C08C61EA731DA00B06616 /* DetailTransportationView.swift */,
+				8E8C08C81EA74EC700B06616 /* DetailReviewView.swift */,
+				8E8C08CA1EA751B700B06616 /* PriceIncludesView.swift */,
+				8E8C08CC1EA7679500B06616 /* PriceExcludesView.swift */,
+			);
+			name = TourViews;
+			sourceTree = "<group>";
+		};
 		8E8D0A721E7C0B5D00E7104C /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +238,7 @@
 				8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */,
 				8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */,
 				8E7868AB1E7A94BB0094C2C4 /* FooterCell.swift */,
+				8E8C08BF1EA71D3F00B06616 /* TourViews */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +250,7 @@
 				8E071A581E715977002F8FC6 /* DetailDatasourceController.swift */,
 				8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */,
 				8EBEE2FE1E9C9F5A006ED508 /* TourCollectionViewController.swift */,
+				8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */,
 				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
 				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
 				8E3DC59B1E3EEB8000FD7E8A /* SecondViewController.swift */,
@@ -351,22 +395,34 @@
 				8EBEE2FF1E9C9F5A006ED508 /* TourCollectionViewController.swift in Sources */,
 				8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */,
 				8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */,
+				8E8C08BE1EA6313900B06616 /* WhereWillBeView.swift in Sources */,
+				8E2811111EA4A26F00DAD76F /* AboutHostView.swift in Sources */,
+				8E8C08C91EA74EC700B06616 /* DetailReviewView.swift in Sources */,
+				8E8C08C71EA731DA00B06616 /* DetailTransportationView.swift in Sources */,
 				8E071A571E715795002F8FC6 /* HomeDatasource.swift in Sources */,
 				8E8D0A741E7C0B6B00E7104C /* Service.swift in Sources */,
 				8E071A661E715E1C002F8FC6 /* AttractionLocationCell.swift in Sources */,
+				8E1FFE951EAA07A300470D7B /* BookNowViewController.swift in Sources */,
 				8E071A601E715DB1002F8FC6 /* AttractionImagesCell.swift in Sources */,
 				8E071A681E715E7A002F8FC6 /* FirstPageCells.swift in Sources */,
 				8E071A621E715DE4002F8FC6 /* ToursAndActivitiesCell.swift in Sources */,
+				8E8C08CB1EA751B700B06616 /* PriceIncludesView.swift in Sources */,
+				8E2811131EA4D9B400DAD76F /* MainDescriptionView.swift in Sources */,
 				8E071A641E715E03002F8FC6 /* AttractionReviewsCell.swift in Sources */,
 				8EBDA9FB1E72705A00571F9C /* Attraction.swift in Sources */,
+				8E8C08BC1EA62D8500B06616 /* WhatWeWillDoView.swift in Sources */,
+				8E8C08C11EA71D7D00B06616 /* DetailsPriceView.swift in Sources */,
 				8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */,
+				8E8C08C31EA72BA700B06616 /* DetailDepartView.swift in Sources */,
 				8EB9A34A1E38946700CE0298 /* SearchViewController.swift in Sources */,
 				8E7868B21E7AA1330094C2C4 /* Reviews.swift in Sources */,
 				8E071A6A1E715EF1002F8FC6 /* DetailDatasource.swift in Sources */,
 				8E02EF331E2E311600AB0CF4 /* AT.xcdatamodeld in Sources */,
 				8E7868AC1E7A94BB0094C2C4 /* FooterCell.swift in Sources */,
 				8E071A591E715977002F8FC6 /* DetailDatasourceController.swift in Sources */,
+				8E8C08C51EA72F4E00B06616 /* DetailLanguageView.swift in Sources */,
 				8E1E3EB91E6004EE006CA49F /* OverviewViewController.swift in Sources */,
+				8E8C08CD1EA7679500B06616 /* PriceExcludesView.swift in Sources */,
 				8E071A5D1E715D87002F8FC6 /* AttractionOverviewCell.swift in Sources */,
 				8E0BF9C71E71332000B0F1BA /* HomeDatasourceController.swift in Sources */,
 				8E7868A81E766B2A0094C2C4 /* Titles.swift in Sources */,
