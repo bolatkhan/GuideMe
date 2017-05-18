@@ -40,6 +40,8 @@ class PriceIncludesView: UIView {
         textView.text = "Water, ecofees and other blah blah blah"
         textView.textAlignment = .left
         textView.isEditable = false
+        textView.isScrollEnabled = false
+
         return textView
     }()
     func setupViews() {

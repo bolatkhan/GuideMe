@@ -40,6 +40,8 @@ class DetailTransportationView: UIView {
         textView.textAlignment = .right
         //        textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
+
         return textView
     }()
     

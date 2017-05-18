@@ -20,7 +20,7 @@ class DetailDatasource: Datasource {
         return [overview]
     }()
     var tours: [Tour] = {
-        let firstTour = Tour(id: 0, tourImageUrl: "", name: "Sorry, there is no tours yet", type: "", rating: "", distance: "", durationType: "", duration: "", cost: 0, placeId: 0, numberOfPeople: "", description: "")
+        let firstTour = Tour(id: 0, typeName: "", typeIconUrl: "", hostName: "", hostLogoUrl: "", hostNumber: 0, hostDescription: "", transportation: "", tourImageUrlString: "", connectedPlaces: "", name: "", amountOfPeople: "", duration: "", whatWeWillDo: "", generalInfo: "", pricePerPerson: "", departsAt: "", languages: "", whatToWear: "", priceIncludes: "", priceExcludes: "")
         return []
     }()
     let reviews: [Reviews] = {
@@ -59,7 +59,8 @@ class DetailDatasource: Datasource {
         if indexPath.section == 3 {
             return reviews[indexPath.item]
         }
-        return tours[indexPath.item]
+//        return tours[indexPath.item]
+        return 0
     }
     override func numberOfItems(_ section: Int) -> Int {
         if section == 2 {

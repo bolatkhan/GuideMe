@@ -12,8 +12,7 @@ import EasyPeasy
 import LBTAComponents
 
 
-class DetailReviewView: UIView {
-    
+class DetailWhatToWearView: UIView {
     init() {
         super.init(frame: UIScreen.main.bounds)
         setupViews()
@@ -22,49 +21,44 @@ class DetailReviewView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
-    let reviewLabel: UILabel = {
+    let wearLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
-        textView.text = "Reviews"
+        textView.text = "What to wear"
         //        textView.backgroundColor = .clear
         return textView
     }()
-    
-    let reviewTextView: UITextView = {
+    let wearTextView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont.avenirMedium(fontSize: 14)
-        textView.textColor = .black
-        textView.text = "*****"
-        textView.textAlignment = .right
         textView.backgroundColor = .clear
+        textView.font = UIFont.avenirMedium(fontSize: 10)
+        textView.textColor = .black
+        textView.text = "Water, ecofees and other blah blah blah"
+        textView.textAlignment = .left
         textView.isEditable = false
+        textView.isScrollEnabled = false
         return textView
     }()
-    
-    
     func setupViews() {
-        addSubview(reviewLabel)
-        addSubview(reviewTextView)
+        addSubview(wearLabel)
+        addSubview(wearTextView)
         setupConstraints()
         backgroundColor = .white
     }
     private func setupConstraints(){
-        reviewLabel <- [
+        wearLabel <- [
             Top(0),
             Left(10),
-            Bottom(0),
-            Right(0).to(reviewTextView)
+            Right(0),
+            Bottom(0).to(wearTextView)
         ]
-        reviewTextView <- [
-            Top(0),
-            Left(0).to(reviewLabel),
-            Right(10),
+        wearTextView <- [
+            Top(0).to(wearLabel),
+            Left(5),
+            Right(0),
             Bottom(0)
         ]
     }
-    
 }
 

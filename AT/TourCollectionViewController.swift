@@ -54,8 +54,8 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    lazy var detailReviewView: DetailReviewView = {
-        let view = DetailReviewView()
+    lazy var detailWearView: DetailWhatToWearView = {
+        let view = DetailWhatToWearView()
         return view
     }()
     lazy var priceIncludesView: PriceIncludesView = {
@@ -86,7 +86,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         self.title = "Tour Overview"
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1590)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1700)
         
         scrollView.addSubview(mainDescriptionView)
         scrollView.addSubview(aboutHostView)
@@ -96,7 +96,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(detailsDepartView)
         scrollView.addSubview(detailLanguageView)
         scrollView.addSubview(detailTransportationView)
-        scrollView.addSubview(detailReviewView)
+        scrollView.addSubview(detailWearView)
         scrollView.addSubview(priceIncludesView)
         scrollView.addSubview(priceExcludesView)
         scrollView.addSubview(bookButton)
@@ -105,27 +105,27 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     }
     func setupConstraints() {
         mainDescriptionView <- [
-            Height(420),
+            Height(380),
             Width().like(view),
             Top(0),
             CenterX(0)
         ]
         aboutHostView <- [
-            Height(330),
+            Height(280),
             Width().like(view),
             Top(10).to(mainDescriptionView),
             CenterX(0)
         ]
         
         whatWeWillDoView <- [
-            Height(230),
+            Height(300),
             Width().like(view),
             Top(10).to(aboutHostView),
             CenterX(0)
         ]
         
         whereWillBeView <- [
-            Height(230),
+            Height(300),
             Width().like(view),
             Top(10).to(whatWeWillDoView),
             CenterX(0)
@@ -155,8 +155,8 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(1).to(detailLanguageView),
             CenterX(0)
         ]
-        detailReviewView <- [
-            Height(32),
+        detailWearView <- [
+            Height(96),
             Width().like(view),
             Top(1).to(detailTransportationView),
             CenterX(0)
@@ -164,7 +164,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         priceIncludesView <- [
             Height(64),
             Width().like(view),
-            Top(1).to(detailReviewView),
+            Top(1).to(detailWearView),
             CenterX(0)
         ]
         priceExcludesView <- [
@@ -179,18 +179,35 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(1).to(priceExcludesView),
             CenterX(0)
         ]
-
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-         mainDescriptionView.nameLabel.text = tour?.name
-//        mainDescriptionView.tourType
+        let staticURL = "http://karibay.pythonanywhere.com/"
+
+        mainDescriptionView.nameLabel.text = tour?.name
+        mainDescriptionView.tourType.text = tour?.typeName
         mainDescriptionView.durationLabel.text = tour?.duration
-        mainDescriptionView.peopleLabel.text = tour?.numberOfPeople
-//        aboutHostView.hostName.text
-        whatWeWillDoView.eventOverview.text = tour?.description
-        mainDescriptionView.tourImageView.loadImage(urlString: "http://karibay.pythonanywhere.com/"+(tour?.tourImageUrl)!)
+        mainDescriptionView.peopleLabel.text = tour?.amountOfPeople
+        aboutHostView.hostImage.loadImage(urlString: staticURL+(tour?.hostLogoUrl)!)
+        aboutHostView.hostName.text = tour?.hostName
+        aboutHostView.hostOverview.text = tour?.hostDescription
+        
+        whatWeWillDoView.eventOverview.text = tour?.whatWeWillDo
+        whereWillBeView.eventOverview.text = tour?.generalInfo
+        
+        detailsPriceView.priceView.text = tour?.pricePerPerson
+        detailsDepartView.departTextView.text = tour?.departsAt
+        detailLanguageView.languageTextView.text = tour?.languages
+        detailTransportationView.transportationTextView.text = tour?.transportation
+        detailWearView.wearTextView.text = tour?.whatToWear
+        priceIncludesView.priceIncludesTextView.text = tour?.priceIncludes
+        priceExcludesView.priceExcludesTextView.text = tour?.priceExcludes
+        
+        
+        
+        
+        whatWeWillDoView.eventOverview.text = tour?.whatWeWillDo
+        mainDescriptionView.tourImageView.loadImage(urlString: "http://karibay.pythonanywhere.com/"+(tour?.tourImageUrlString)!)
         setupViews()
         setupConstraints()
     }

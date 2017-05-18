@@ -23,7 +23,7 @@ class WhereWillBeView: UIView {
     
     let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Where will be"
+        label.text = "General info"
         label.font = UIFont.avenirMedium(fontSize: 24)
         return label
     }()
@@ -36,6 +36,8 @@ class WhereWillBeView: UIView {
         textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify"
         //        textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
+
         return textView
     }()
     
@@ -50,7 +52,8 @@ class WhereWillBeView: UIView {
         headerLabel <- [
             Top(),
             Right(10),
-            Left(10)
+            Left(10),
+            Height(25)
         ]
         eventOverview <- [
             Top(8).to(headerLabel),

@@ -40,6 +40,7 @@ class DetailsDepartView: UIView {
         textView.textAlignment = .right
         //        textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
         return textView
     }()
     
@@ -64,5 +65,4 @@ class DetailsDepartView: UIView {
             Bottom(0)
         ]
     }
-    
 }

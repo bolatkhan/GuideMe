@@ -28,8 +28,8 @@ class AboutHostView: UIView {
         return label
     }()
   
-    let hostImage: UIImageView = {
-        let imageView = UIImageView()
+    let hostImage: CachedImageView = {
+        let imageView = CachedImageView()
         imageView.image = UIImage(named: "me")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 35
@@ -49,6 +49,7 @@ class AboutHostView: UIView {
         textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplifyYourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify"
 //        textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
         return textView
     }()
     
@@ -63,9 +64,11 @@ class AboutHostView: UIView {
     }
     private func setupConstraints(){
         headerLabel <- [
-            Top(),
+            Top(0),
             Right(10),
-            Left(10)
+            Left(10),
+            Height(25)
+            
         ]
         hostImage <- [
             Size(70),
@@ -74,7 +77,8 @@ class AboutHostView: UIView {
         ]
         hostName <- [
             Top(8).to(hostImage),
-            CenterX(0)
+            CenterX(0),
+            Height(19)
         ]
         hostOverview <- [
             Top(8).to(hostName),

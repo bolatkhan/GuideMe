@@ -46,7 +46,7 @@ class MainDescriptionView: UIView {
     
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.text = "*****"
+        label.text = ""
         return label
     }()
     let peopleImage: UIImageView = {

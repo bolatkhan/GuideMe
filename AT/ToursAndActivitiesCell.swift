@@ -14,13 +14,11 @@ class ToursAndActivities: DatasourceCell {
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
-            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrl)
+            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrlString)
             nameLabel.text = tour.name
-            typeLabel.text = tour.type
-            ratingLabel.text = tour.rating
-            distanceLabel.text = tour.distance
-            durationLabel.text = String(tour.duration)+" "+tour.durationType
-            costLabel.text = "$"+String(tour.cost)
+            typeLabel.text = tour.typeName
+            durationLabel.text = tour.duration
+            costLabel.text = "$"+String(tour.pricePerPerson)
         }
     }
     
@@ -33,35 +31,45 @@ class ToursAndActivities: DatasourceCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Sorry, there is no tours yet"
+        label.font = UIFont.avenirMedium(fontSize: 14)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
         return label
     }()
     let typeLabel: UILabel = {
         let label = UILabel()
         label.text = "Nature Landmarks"
+        label.font = UIFont.avenirMedium(fontSize: 12)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
         return label
     }()
     
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.text = "*****"
-        return label
-    }()
-    
-    let distanceLabel: UILabel = {
-        let label = UILabel()
-        label.text = "12"
+        label.text = ""
         return label
     }()
     
     let durationLabel: UILabel = {
         let label = UILabel()
-        label.text = "2"
+        label.text = "2 hours"
+        label.font = UIFont.avenirMedium(fontSize: 12)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
         return label
     }()
     
     let costLabel: UILabel = {
         let label = UILabel()
-        label.text = "20"
+        label.text = "$0"
+        label.font = UIFont.avenirMedium(fontSize: 12)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
         return label
     }()
 
@@ -77,7 +85,6 @@ class ToursAndActivities: DatasourceCell {
         addSubview(nameLabel)
         addSubview(typeLabel)
         addSubview(ratingLabel)
-        addSubview(distanceLabel)
         addSubview(durationLabel)
         addSubview(costLabel)
         
@@ -86,9 +93,8 @@ class ToursAndActivities: DatasourceCell {
         typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         ratingLabel.anchor(typeLabel.bottomAnchor, left: typeLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         
-        distanceLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 20)
-        durationLabel.anchor(ratingLabel.bottomAnchor, left: distanceLabel.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        costLabel.anchor(ratingLabel.bottomAnchor, left: durationLabel.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
+        durationLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 120, heightConstant: 20)
+        costLabel.anchor(ratingLabel.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
         
     }
 }

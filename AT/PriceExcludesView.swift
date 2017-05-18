@@ -29,7 +29,7 @@ class PriceExcludesView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    let priceIncludesLabel: UILabel = {
+    let priceExcludesLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
@@ -38,30 +38,32 @@ class PriceExcludesView: UIView {
         return textView
     }()
     
-    let priceIncludesTextView: UITextView = {
+    let priceExcludesTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 10)
         textView.textColor = .black
         textView.text = "Water, ecofees and other blah blah blah"
         textView.textAlignment = .left
         textView.isEditable = false
+        textView.isScrollEnabled = false
+
         return textView
     }()
     func setupViews() {
-        addSubview(priceIncludesLabel)
-        addSubview(priceIncludesTextView)
+        addSubview(priceExcludesLabel)
+        addSubview(priceExcludesTextView)
         setupConstraints()
         backgroundColor = .white
     }
     private func setupConstraints(){
-        priceIncludesLabel <- [
+        priceExcludesLabel <- [
             Top(0),
             Left(10),
             Right(0),
-            Bottom(0).to(priceIncludesTextView)
+            Bottom(0).to(priceExcludesTextView)
         ]
-        priceIncludesTextView <- [
-            Top(0).to(priceIncludesLabel),
+        priceExcludesTextView <- [
+            Top(0).to(priceExcludesLabel),
             Left(5),
             Right(0),
             Bottom(0)

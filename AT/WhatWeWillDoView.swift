@@ -36,6 +36,8 @@ class WhatWeWillDoView: UIView {
         textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify"
         //        textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
+
         return textView
     }()
     
@@ -50,7 +52,9 @@ class WhatWeWillDoView: UIView {
         headerLabel <- [
             Top(),
             Right(10),
-            Left(10)
+            Left(10),
+            Height(25)
+            
         ]
         eventOverview <- [
             Top(8).to(headerLabel),

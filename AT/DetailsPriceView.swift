@@ -35,8 +35,9 @@ class DetailsPriceView: UIView {
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "$30"
-        textView.textAlignment = .right
         textView.isEditable = false
+        textView.isScrollEnabled = false
+        textView.textAlignment = .right
         return textView
     }()
 
