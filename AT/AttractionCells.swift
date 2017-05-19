@@ -9,7 +9,7 @@
 import LBTAComponents
 import EasyPeasy
 
-class ToursCell: DatasourceCell {
+class AttractionCell: DatasourceCell {
     
     var staticURL = "http://karibay.pythonanywhere.com/"
     override var datasourceItem: Any?{
@@ -20,13 +20,11 @@ class ToursCell: DatasourceCell {
             cellBackgroundImageView.loadImage(urlString: staticURL+attraction.attractionImageUrl!)
         }
     }
-    
     lazy var imgOverlay: UIView = {
         let overlay =  UIView()
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
         return overlay
     }()
-    
     lazy var cellBackgroundImageView: CachedImageView = {
         let backgroundImageView = CachedImageView()
         backgroundImageView.image = UIImage(named: "bao.jpg")
@@ -34,7 +32,6 @@ class ToursCell: DatasourceCell {
         backgroundImageView.clipsToBounds = true
         return backgroundImageView
     }()
-    
     lazy var tourName: UILabel = {
         let label = UILabel()
         label.font = UIFont.avenirMedium(fontSize: 24)

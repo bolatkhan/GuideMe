@@ -9,7 +9,7 @@
 import LBTAComponents
 import SwiftyJSON
 import TRON
-class DetailDatasourceController: DatasourceController {
+class DetailAttrDatasourceController: DatasourceController {
     var tour = [Tour]()
     let errorMessageLabel: UILabel = {
         let label = UILabel()

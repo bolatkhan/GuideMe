@@ -11,7 +11,7 @@ import TRON
 import SwiftyJSON
 import UIKit
 
-class HomeDatasourceController: DatasourceController {
+class AttractionDatasourceController: DatasourceController {
     var attractions = [Attraction]()
     let errorMessageLabel: UILabel = {
         let label = UILabel()
@@ -25,14 +25,14 @@ class HomeDatasourceController: DatasourceController {
         super.viewDidLoad()
         view.addSubview(errorMessageLabel)
         errorMessageLabel.fillSuperview()
-        self.title = "Destinations"
-        Service.sharedInstance.fetchHomeFeed{(homeDatasource,err) in
+        self.title = "Attractions"
+        ServiceAttraction.sharedInstance.fetchAttrFeed{(attractionDatasource,err) in
             if let _ = err {
                 self.errorMessageLabel.isHidden = false
                 return
             }
-            self.datasource = homeDatasource
-            self.attractions = (homeDatasource?.attractions)!
+            self.datasource = attractionDatasource
+            self.attractions = (attractionDatasource?.attractions)!
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: nil )
@@ -48,7 +48,7 @@ class HomeDatasourceController: DatasourceController {
 //        self.navigationController?.pushViewController(vc, animated: true)
 //    }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailTour = DetailDatasourceController()
+        let detailTour = DetailAttrDatasourceController()
         let attraction =  attractions[indexPath.row]
         detailTour.attraction = attraction
         self.navigationController?.pushViewController(detailTour, animated: true)

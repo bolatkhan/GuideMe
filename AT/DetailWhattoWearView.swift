@@ -48,10 +48,11 @@ class DetailWhatToWearView: UIView {
     }
     private func setupConstraints(){
         wearLabel <- [
-            Top(0),
+            Top(5),
             Left(10),
             Right(0),
-            Bottom(0).to(wearTextView)
+            Bottom(0).to(wearTextView),
+            Height(15)
         ]
         wearTextView <- [
             Top(0).to(wearLabel),

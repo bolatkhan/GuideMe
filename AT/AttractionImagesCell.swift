@@ -9,41 +9,33 @@
 import LBTAComponents
 import EasyPeasy
 import Reusable
+import UIKit
 
 class AttractionImageCell: DatasourceCell  {
+    var imageList: [UIImage] = [
+        UIImage(named: "me")!,
+        UIImage(named: "main")!,
+        UIImage(named: "bao")!
+    ]
     
-//    class CollectionView: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-//        private let cellId = "cellId"
-//        
-//        override func viewDidLoad() {
-//            super.viewDidLoad()
-//            collectionView?.backgroundColor = UIColor.white
-//            
-//        }
-//        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagesCell
-//            return cell
-//        }
-//        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//            return 3
-//        }
-//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//            return CGSize(width: view.frame.width, height: 5)
-//        }
-//    }
-//    class ImagesCell: UICollectionViewCell {
-//        override init(frame: CGRect) {
-//            super.init(frame: frame)
-//            setupViews()
-//        }
-//        
-//        required init?(coder aDecoder: NSCoder) {
-//            fatalError("init(coder:) has not been implemented")
-//        }
-//        func setupViews(){
-//            backgroundColor = UIColor.red
-//        }
-//    }
+    private lazy var layout: UICollectionViewFlowLayout = {
+       let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        collectionView.register(cellType: ImageCollectionViewCell.self)
+        collectionView.dataSource = self
+        collectionView.isPagingEnabled = true
+        collectionView.delegate = self
+        return collectionView
+    }()
+    
+    fileprivate lazy var pageControl = UIPageControl()
     
     var staticURL = "http://karibay.pythonanywhere.com/"
     override var datasourceItem: Any?{
@@ -92,24 +84,56 @@ class AttractionImageCell: DatasourceCell  {
     override func setupViews() {
         super.setupViews()
         backgroundColor = .black
-        addSubview(cellBackgroundImageView)
-        cellBackgroundImageView.addSubview(imgOverlay)
-        cellBackgroundImageView.addSubview(tourName)
-        cellBackgroundImageView.addSubview(tourShortDescription)
-        cellBackgroundImageView <- [
-            Edges(0)
+//        addSubview(cellBackgroundImageView)
+//        cellBackgroundImageView.addSubview(imgOverlay)
+//        cellBackgroundImageView.addSubview(tourName)
+//        cellBackgroundImageView.addSubview(tourShortDescription)
+//        cellBackgroundImageView <- [
+//            Edges(0)
+//        ]
+//        imgOverlay <- [
+//            Edges(0)
+//        ]
+//        tourName <- [
+//            Center(),
+//            Left(12),
+//            Right(12)
+//        ]
+//        tourShortDescription <- [
+//            Bottom(5).to(tourName),
+//            CenterX()
+//        ]
+        self.contentView.addSubview(collectionView)
+        self.contentView.addSubview(pageControl)
+        pageControl.currentPageIndicatorTintColor = .red
+        pageControl.pageIndicatorTintColor = .blue
+        pageControl <- [
+            CenterX(0),
+            Bottom(5),
+            Width(100),
+            Height(20)
         ]
-        imgOverlay <- [
-            Edges(0)
-        ]
-        tourName <- [
-            Center(),
-            Left(12),
-            Right(12)
-        ]
-        tourShortDescription <- [
-            Bottom(5).to(tourName),
-            CenterX()
-        ]
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let frame = CGRect(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
+        self.collectionView.frame = frame
+        self.layout.itemSize = frame.size
+        
+    }
+}
+
+extension AttractionImageCell: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.pageControl.numberOfPages = imageList.count
+        return imageList.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as ImageCollectionViewCell
+        cell.imageView.image = imageList[indexPath.row]
+        return cell
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.pageControl.currentPage = Int(scrollView.contentOffset.x / self.contentView.frame.width)
     }
 }

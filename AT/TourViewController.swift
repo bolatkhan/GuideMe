@@ -86,8 +86,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         self.title = "Tour Overview"
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1700)
-        
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1735)
         scrollView.addSubview(mainDescriptionView)
         scrollView.addSubview(aboutHostView)
         scrollView.addSubview(whatWeWillDoView)
@@ -105,7 +104,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     }
     func setupConstraints() {
         mainDescriptionView <- [
-            Height(380),
+            Height(400),
             Width().like(view),
             Top(0),
             CenterX(0)
@@ -116,14 +115,12 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(10).to(mainDescriptionView),
             CenterX(0)
         ]
-        
         whatWeWillDoView <- [
             Height(300),
             Width().like(view),
             Top(10).to(aboutHostView),
             CenterX(0)
         ]
-        
         whereWillBeView <- [
             Height(300),
             Width().like(view),
@@ -142,7 +139,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(1).to(detailsPriceView),
             CenterX(0)
         ]
-        
         detailLanguageView <- [
             Height(32),
             Width().like(view),
@@ -183,12 +179,12 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let staticURL = "http://karibay.pythonanywhere.com/"
-
         mainDescriptionView.nameLabel.text = tour?.name
+        mainDescriptionView.tourImageView.loadImage(urlString: staticURL+(tour?.tourImageUrlString)!)
         mainDescriptionView.tourType.text = tour?.typeName
         mainDescriptionView.durationLabel.text = tour?.duration
         mainDescriptionView.peopleLabel.text = tour?.amountOfPeople
-        aboutHostView.hostImage.loadImage(urlString: staticURL+(tour?.hostLogoUrl)!)
+//        aboutHostView.hostImage.loadImage(urlString: staticURL+(tour?.hostLogoUrl)!)
         aboutHostView.hostName.text = tour?.hostName
         aboutHostView.hostOverview.text = tour?.hostDescription
         
@@ -203,11 +199,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         priceIncludesView.priceIncludesTextView.text = tour?.priceIncludes
         priceExcludesView.priceExcludesTextView.text = tour?.priceExcludes
         
-        
-        
-        
-        whatWeWillDoView.eventOverview.text = tour?.whatWeWillDo
-        mainDescriptionView.tourImageView.loadImage(urlString: "http://karibay.pythonanywhere.com/"+(tour?.tourImageUrlString)!)
         setupViews()
         setupConstraints()
     }

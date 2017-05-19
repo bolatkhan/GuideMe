@@ -12,13 +12,13 @@ struct Tour {
     let id: Int
     let typeName: String
     let typeIconUrl: String
-    let hostName: String
-    let hostLogoUrl: String
-    let hostNumber: Int
-    let hostDescription: String
+    let hostName: String?
+    let hostLogoUrl: String?
+    let hostNumber: Int?
+    let hostDescription: String?
     
     let transportation: String
-    let tourImageUrlString: String
+    let tourImageUrlString: String?
     
     let connectedPlaces: String
     

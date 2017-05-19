@@ -43,10 +43,10 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: HomeDatasourceController.init()), animated: true)
+            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: AttractionDatasourceController.init()), animated: true)
             self.sideMenuViewController!.hideMenuViewController()
         case 1:
-            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: SecondViewController.init()), animated: true)
+            self.sideMenuViewController!.setContentViewController(UINavigationController.init(rootViewController: TourDatasourceController.init()), animated: true)
             self.sideMenuViewController!.hideMenuViewController()
         default:
             break
@@ -74,7 +74,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.selectedBackgroundView = UIView.init()
         }
         
-        var titles: [String] = ["Places", "Tours", "", "", ""]
+        var titles: [String] = ["Attractions", "Tours", "", "", ""]
         var images: [String] = ["", "", "", "", ""]
         cell!.textLabel?.text = titles[(indexPath as NSIndexPath).row]
         cell!.imageView?.image = UIImage.init(named: images[(indexPath as NSIndexPath).row])

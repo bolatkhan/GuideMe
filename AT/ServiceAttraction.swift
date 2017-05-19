@@ -10,17 +10,17 @@ import Foundation
 import TRON
 import SwiftyJSON
 
-struct Service {
+struct ServiceAttraction {
     
     let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
 
 
-    static let sharedInstance = Service()
+    static let sharedInstance = ServiceAttraction()
     
-    func fetchHomeFeed(completion: @escaping (HomeDatasource?, Error? ) -> ()) {
-        let request: APIRequest<HomeDatasource, JSONError> = tron.request("api/places")
-        request.perform(withSuccess: { (homeDatasource) in
-            completion(homeDatasource, nil)
+    func fetchAttrFeed(completion: @escaping (AttractionDatasource?, Error? ) -> ()) {
+        let request: APIRequest<AttractionDatasource, JSONError> = tron.request("api/places")
+        request.perform(withSuccess: { (attractionDatasource) in
+            completion(attractionDatasource, nil)
         }) { (err) in
             completion(nil, err)
          }

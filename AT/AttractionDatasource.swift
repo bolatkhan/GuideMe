@@ -10,7 +10,7 @@ import LBTAComponents
 import TRON
 import SwiftyJSON
 
-class HomeDatasource: Datasource, JSONDecodable {
+class AttractionDatasource: Datasource, JSONDecodable {
     let attractions: [Attraction]
     required init(json: JSON) throws {
         var attractions = [Attraction]()
@@ -23,13 +23,11 @@ class HomeDatasource: Datasource, JSONDecodable {
             let attractionImageUrls = attrJson["images"].arrayObject as? [String]
             let attraction = Attraction(id: id,name: name, shortDescription: shortDescription,attractionImageUrl: attractionImageUrls?[0] , fullDescription: fullDescription)
                 attractions.append(attraction)
-
-           
         }
          self.attractions = attractions
     }
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [ToursCell.self]
+        return [AttractionCell.self]
     }
     override func item(_ indexPath: IndexPath) -> Any? {
         return attractions[indexPath.item]

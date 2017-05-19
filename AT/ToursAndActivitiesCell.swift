@@ -7,6 +7,8 @@
 //
 
 import LBTAComponents
+import EasyPeasy
+
 
 class ToursAndActivities: DatasourceCell {
     var staticURL = "http://karibay.pythonanywhere.com/"
@@ -14,7 +16,7 @@ class ToursAndActivities: DatasourceCell {
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
-            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrlString)
+            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrlString!)
             nameLabel.text = tour.name
             typeLabel.text = tour.typeName
             durationLabel.text = tour.duration
@@ -34,7 +36,6 @@ class ToursAndActivities: DatasourceCell {
         label.font = UIFont.avenirMedium(fontSize: 14)
         label.textColor = .black
         label.numberOfLines = 0
-        label.backgroundColor = .clear
         return label
     }()
     let typeLabel: UILabel = {
@@ -88,13 +89,44 @@ class ToursAndActivities: DatasourceCell {
         addSubview(durationLabel)
         addSubview(costLabel)
         
-        tourImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 104, heightConstant: 104)
-        nameLabel.anchor(tourImageView.topAnchor, left: tourImageView.rightAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
-        typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        ratingLabel.anchor(typeLabel.bottomAnchor, left: typeLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        tourImageView <- [
+            Size(104),
+            Top(12),
+            Right(8).to(nameLabel),
+            Left(12)
+        ]
         
-        durationLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 120, heightConstant: 20)
-        costLabel.anchor(ratingLabel.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
+        nameLabel <- [
+            Top(12),
+            Right(12),
+            Left(8).to(tourImageView),
+            
+        ]
+        
+        typeLabel <- [
+            Top(8).to(nameLabel),
+            Right(8).to(durationLabel),
+            Left(8).to(tourImageView)
+        ]
+        durationLabel <- [
+            Top(8).to(nameLabel),
+            Right(8).to(costLabel),
+            Left(8).to(typeLabel)
+        ]
+        costLabel <- [
+            Top(8).to(nameLabel),
+            Right(12),
+            Left(8).to(durationLabel)
+        ]
+        
+        
+//        tourImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 104, heightConstant: 104)
+//        nameLabel.anchor(tourImageView.topAnchor, left: tourImageView.rightAnchor, bottom: typeLabel.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 30)
+//        typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+//        ratingLabel.anchor(typeLabel.bottomAnchor, left: typeLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+//        
+//        durationLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 120, heightConstant: 20)
+//        costLabel.anchor(ratingLabel.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
         
     }
 }

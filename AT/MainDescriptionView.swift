@@ -32,7 +32,7 @@ class MainDescriptionView: UIView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Sorry, there is no tours yet"
-        label.font = UIFont.avenirMedium(fontSize: 24)
+        label.font = UIFont.avenirMedium(fontSize: 18)
 //        label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -40,7 +40,7 @@ class MainDescriptionView: UIView {
     let tourType: UILabel = {
         let label = UILabel()
         label.text = "Nature&Mountains"
-        label.font = UIFont.avenirMedium(fontSize: 18)
+        label.font = UIFont.avenirMedium(fontSize: 14)
         return label
     }()
     

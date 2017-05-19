@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AKSideMenuDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         // Create content and menu controllers
-        let navigationController: UINavigationController = UINavigationController.init(rootViewController: HomeDatasourceController.init())
+        let navigationController: UINavigationController = UINavigationController.init(rootViewController: AttractionDatasourceController.init())
         let leftMenuViewController = LeftViewController.init()
         
         // Create side menu controller

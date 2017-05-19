@@ -57,10 +57,11 @@ class PriceExcludesView: UIView {
     }
     private func setupConstraints(){
         priceExcludesLabel <- [
-            Top(0),
+            Top(5),
             Left(10),
             Right(0),
-            Bottom(0).to(priceExcludesTextView)
+            Bottom(0).to(priceExcludesTextView),
+            Height(15)
         ]
         priceExcludesTextView <- [
             Top(0).to(priceExcludesLabel),
