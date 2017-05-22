@@ -17,10 +17,10 @@ struct Tour {
     let hostNumber: Int?
     let hostDescription: String?
     
-    let transportation: String
+    let transportation: String?
     let tourImageUrlString: String?
     
-    let connectedPlaces: String
+    let connectedPlaces: String?
     
     let name: String
     let amountOfPeople: String
