@@ -13,7 +13,7 @@ struct Attraction {
     let id: String
     let name: String
     let shortDescription: String
-    var attractionImageUrl: String?
+    var attractionImageUrls: [String]
     let fullDescription: String
 }
 

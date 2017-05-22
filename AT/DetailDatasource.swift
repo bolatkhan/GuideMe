@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class DetailDatasource: Datasource {
     var attraction: [Attraction] = {
-        let attraction = Attraction(id:"",name: "", shortDescription: "",attractionImageUrl: "", fullDescription: "")
+        let attraction = Attraction(id:"",name: "", shortDescription: "",attractionImageUrls: [], fullDescription: "")
         return [attraction]
     }()
     var overview: [Overview] = {

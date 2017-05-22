@@ -12,7 +12,6 @@ import EasyPeasy
 
 class ToursAndActivities: DatasourceCell {
     var staticURL = "http://karibay.pythonanywhere.com/"
-
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
@@ -23,13 +22,11 @@ class ToursAndActivities: DatasourceCell {
             costLabel.text = "$"+String(tour.pricePerPerson)
         }
     }
-    
     let tourImageView: CachedImageView = {
         let imageView = CachedImageView()
         imageView.clipsToBounds = true
         return imageView
     }()
-    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Sorry, there is no tours yet"
@@ -47,13 +44,11 @@ class ToursAndActivities: DatasourceCell {
         label.backgroundColor = .clear
         return label
     }()
-    
     let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         return label
     }()
-    
     let durationLabel: UILabel = {
         let label = UILabel()
         label.text = "2 hours"
@@ -63,7 +58,6 @@ class ToursAndActivities: DatasourceCell {
         label.backgroundColor = .clear
         return label
     }()
-    
     let costLabel: UILabel = {
         let label = UILabel()
         label.text = "$0"
@@ -73,12 +67,8 @@ class ToursAndActivities: DatasourceCell {
         label.backgroundColor = .clear
         return label
     }()
-
-    
-    
     override func setupViews() {
         super.setupViews()
-        
         separatorLineView.isHidden = false
         separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         backgroundColor = .white
@@ -95,14 +85,11 @@ class ToursAndActivities: DatasourceCell {
             Right(8).to(nameLabel),
             Left(12)
         ]
-        
         nameLabel <- [
             Top(12),
             Right(12),
             Left(8).to(tourImageView),
-            
         ]
-        
         typeLabel <- [
             Top(8).to(nameLabel),
             Right(8).to(durationLabel),
@@ -118,15 +105,5 @@ class ToursAndActivities: DatasourceCell {
             Right(12),
             Left(8).to(durationLabel)
         ]
-        
-        
-//        tourImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 104, heightConstant: 104)
-//        nameLabel.anchor(tourImageView.topAnchor, left: tourImageView.rightAnchor, bottom: typeLabel.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 30)
-//        typeLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-//        ratingLabel.anchor(typeLabel.bottomAnchor, left: typeLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-//        
-//        durationLabel.anchor(ratingLabel.bottomAnchor, left: ratingLabel.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 120, heightConstant: 20)
-//        costLabel.anchor(ratingLabel.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 8, leftConstant: 0, bottomConstant: 0, rightConstant: 18, widthConstant: 0, heightConstant: 25)
-        
-    }
+     }
 }

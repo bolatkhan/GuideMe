@@ -9,6 +9,7 @@
 import UIKit
 import Reusable
 import EasyPeasy
+import LBTAComponents
 
 class ImageCollectionViewCell: UICollectionViewCell, Reusable {
     var imageView = UIImageView()

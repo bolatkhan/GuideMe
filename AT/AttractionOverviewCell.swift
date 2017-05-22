@@ -26,12 +26,10 @@ class AttractionOverviewCell: DatasourceCell {
         textView.backgroundColor = .clear
         return textView
     }()
-    
     override func setupViews() {
         super.setupViews()
         backgroundColor = .white
         addSubview(tourDescription)
-       
         tourDescription.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 12, leftConstant: 12, bottomConstant: 12, rightConstant: 12, widthConstant: 0, heightConstant: 0)
     }
 }

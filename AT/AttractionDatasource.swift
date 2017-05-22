@@ -21,7 +21,7 @@ class AttractionDatasource: Datasource, JSONDecodable {
             let shortDescription = attrJson["short_description"].stringValue
             let fullDescription = attrJson["full_description"].stringValue
             let attractionImageUrls = attrJson["images"].arrayObject as? [String]
-            let attraction = Attraction(id: id,name: name, shortDescription: shortDescription,attractionImageUrl: attractionImageUrls?[0] , fullDescription: fullDescription)
+            let attraction = Attraction(id: id,name: name, shortDescription: shortDescription,attractionImageUrls: attractionImageUrls!, fullDescription: fullDescription)
                 attractions.append(attraction)
         }
          self.attractions = attractions

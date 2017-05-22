@@ -26,7 +26,6 @@
 		8E1FFE951EAA07A300470D7B /* BookNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */; };
 		8E2811111EA4A26F00DAD76F /* AboutHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811101EA4A26F00DAD76F /* AboutHostView.swift */; };
 		8E2811131EA4D9B400DAD76F /* MainDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */; };
-		8E3DC59C1E3EEB8000FD7E8A /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC59B1E3EEB8000FD7E8A /* ToursViewController.swift */; };
 		8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC59E1E41A06D00FD7E8A /* Tints.swift */; };
 		8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3DC5A01E41A25100FD7E8A /* Avenir.swift */; };
 		8E50A8221ECDAAB50004C2E4 /* ServiceTour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8211ECDAAB50004C2E4 /* ServiceTour.swift */; };
@@ -80,7 +79,6 @@
 		8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookNowViewController.swift; sourceTree = "<group>"; };
 		8E2811101EA4A26F00DAD76F /* AboutHostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutHostView.swift; sourceTree = "<group>"; };
 		8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDescriptionView.swift; sourceTree = "<group>"; };
-		8E3DC59B1E3EEB8000FD7E8A /* ToursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursViewController.swift; sourceTree = "<group>"; };
 		8E3DC59E1E41A06D00FD7E8A /* Tints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tints.swift; sourceTree = "<group>"; };
 		8E3DC5A01E41A25100FD7E8A /* Avenir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avenir.swift; sourceTree = "<group>"; };
 		8E50A8211ECDAAB50004C2E4 /* ServiceTour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTour.swift; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 				8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */,
 				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
 				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
-				8E3DC59B1E3EEB8000FD7E8A /* ToursViewController.swift */,
 				8E50A8251ECDAE460004C2E4 /* TourDatasourceController.swift */,
 			);
 			name = Main;
@@ -406,7 +403,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7868AE1E7A9A200094C2C4 /* Overview.swift in Sources */,
-				8E3DC59C1E3EEB8000FD7E8A /* ToursViewController.swift in Sources */,
 				8EBEE2FF1E9C9F5A006ED508 /* TourViewController.swift in Sources */,
 				8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */,
 				8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */,
