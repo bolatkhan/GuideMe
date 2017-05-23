@@ -34,6 +34,4 @@ struct Tour {
     let whatToWear: String
     let priceIncludes: String
     let priceExcludes: String
-    
-    
 }

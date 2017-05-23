@@ -29,7 +29,7 @@ class AttractionImageCell: DatasourceCell  {
                     } else {
                         // No errors found.
                         // It would be weird if we didn't have a response, so check for that too.
-                        if let res = response as? HTTPURLResponse {
+                        if (response as? HTTPURLResponse) != nil {
 //                         print("Downloaded picture with response code \(res.statusCode)")
                             if let imageData = data {
                                 // Finally convert that Data into an image and do what you wish with it.
