@@ -48,12 +48,6 @@ class AttractionImageCell: DatasourceCell  {
             }
         }
     }
-    lazy var cellBackgroundImageView: CachedImageView = {
-        let backgroundImageView = CachedImageView()
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.clipsToBounds = true
-        return backgroundImageView
-    }()
     var imageList: [UIImage] = [
         UIImage(named: "placeholder")!,
         UIImage(named: "placeholder")!,
