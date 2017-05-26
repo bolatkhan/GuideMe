@@ -8,16 +8,25 @@
 
 import LBTAComponents
 import EasyPeasy
+import Kingfisher
 
 class AttractionCell: DatasourceCell {
     
     var staticURL = "http://karibay.pythonanywhere.com/"
+    var imgUrl = String()
     override var datasourceItem: Any?{
         didSet {
             guard let attraction = datasourceItem as? Attraction else { return }
             tourName.text = attraction.name
             tourShortDescription.text = attraction.shortDescription
-            cellBackgroundImageView.loadImage(urlString: staticURL+(attraction.attractionImageUrls[0]))
+//            cellBackgroundImageView.loadImage(urlString: staticURL+(attraction.attractionImageUrls[0]))
+            self.imgUrl = staticURL+(attraction.attractionImageUrls?[0])!
+            cellBackgroundImageView.kf.indicatorType = .activity
+            let image = UIImage(named: "placeholder")
+
+            cellBackgroundImageView.kf.setImage(with: URL(string: imgUrl), placeholder: image)
+
+            
         }
     }
     lazy var imgOverlay: UIView = {
@@ -25,8 +34,8 @@ class AttractionCell: DatasourceCell {
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
         return overlay
     }()
-    lazy var cellBackgroundImageView: CachedImageView = {
-        let backgroundImageView = CachedImageView()
+    lazy var cellBackgroundImageView: UIImageView = {
+        let backgroundImageView = UIImageView()
         backgroundImageView.image = UIImage(named: "bao.jpg")
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true
@@ -55,7 +64,7 @@ class AttractionCell: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         backgroundColor = .black
-        
+        cellBackgroundImageView.kf.setImage(with: URL(string: imgUrl))
         addSubview(cellBackgroundImageView)
         cellBackgroundImageView.addSubview(imgOverlay)
         cellBackgroundImageView.addSubview(tourName)

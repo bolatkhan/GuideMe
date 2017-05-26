@@ -10,8 +10,8 @@ import UIKit
 
 struct Tour {
     let id: Int
-    let typeName: String
-    let typeIconUrl: String
+    let typeName: String?
+    let typeIconUrl: String?
     let hostName: String?
     let hostLogoUrl: String?
     let hostNumber: Int?
@@ -23,15 +23,15 @@ struct Tour {
     let connectedPlaces: String?
     
     let name: String
-    let amountOfPeople: String
-    let duration: String
-    let whatWeWillDo: String
-    let generalInfo: String
+    let amountOfPeople: String?
+    let duration: String?
+    let whatWeWillDo: String?
+    let generalInfo: String?
     
-    let pricePerPerson: String
-    let departsAt: String
-    let languages: String
-    let whatToWear: String
-    let priceIncludes: String
-    let priceExcludes: String
+    let pricePerPerson: String?
+    let departsAt: String?
+    let languages: String?
+    let whatToWear: String?
+    let priceIncludes: String?
+    let priceExcludes: String?
 }

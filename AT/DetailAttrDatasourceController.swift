@@ -33,7 +33,7 @@ class DetailAttrDatasourceController: DatasourceController {
             detailDatasource.tours += [Tour(id: tour.id, typeName: tour.typeName, typeIconUrl: tour.typeIconUrl, hostName: tour.hostName, hostLogoUrl: tour.hostLogoUrl, hostNumber: tour.hostNumber, hostDescription: tour.hostDescription, transportation: tour.transportation, tourImageUrlString: tour.tourImageUrlString, connectedPlaces: tour.connectedPlaces, name: tour.name, amountOfPeople: tour.amountOfPeople, duration: tour.duration, whatWeWillDo: tour.whatWeWillDo, generalInfo: tour.generalInfo, pricePerPerson: tour.pricePerPerson, departsAt: tour.departsAt, languages: tour.languages, whatToWear: tour.whatToWear, priceIncludes: tour.priceIncludes, priceExcludes: tour.priceExcludes)]
         }
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrls: attraction.attractionImageUrls, fullDescription: attraction.fullDescription)]
-        detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription)]
+        detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription!)]
         self.datasource = detailDatasource
     }
     let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
@@ -70,7 +70,7 @@ class DetailAttrDatasourceController: DatasourceController {
                 let whatToWear = tourJson["what_to_wear"].stringValue
                 let priceIncludes = tourJson["price_includes"].stringValue
                 let priceExcludes = tourJson["price_excludes"].stringValue
-                let tour = Tour(id: id, typeName: typeName!, typeIconUrl: typeIconUrl!, hostName: hostName!, hostLogoUrl: hostLogoUrl!, hostNumber: hostNumber!, hostDescription: hostDescription!, transportation: transportation, tourImageUrlString: urlString, connectedPlaces: connectedPlaces, name: name, amountOfPeople: amountOfPeople, duration: duration, whatWeWillDo: whatWeWillDo, generalInfo: generalInfo, pricePerPerson: pricePerPerson, departsAt: departsAt, languages: languages, whatToWear: whatToWear, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
+                let tour = Tour(id: id, typeName: typeName, typeIconUrl: typeIconUrl, hostName: hostName, hostLogoUrl: hostLogoUrl, hostNumber: hostNumber, hostDescription: hostDescription, transportation: transportation, tourImageUrlString: urlString, connectedPlaces: connectedPlaces, name: name, amountOfPeople: amountOfPeople, duration: duration, whatWeWillDo: whatWeWillDo, generalInfo: generalInfo, pricePerPerson: pricePerPerson, departsAt: departsAt, languages: languages, whatToWear: whatToWear, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
                 tours.append(tour)
             }
             self.tours = tours

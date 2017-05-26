@@ -7,6 +7,7 @@ PODS:
   - Device (3.0.1)
   - DeviceKit (1.0.1)
   - EasyPeasy (1.4)
+  - Kingfisher (3.6.1)
   - LBTAComponents (0.1.9)
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - Device (~> 3.0.1)
   - DeviceKit (~> 1.0)
   - EasyPeasy
+  - Kingfisher (~> 3.0)
   - LBTAComponents
   - Reusable
   - TRON (~> 2.0.0)
@@ -52,12 +54,13 @@ SPEC CHECKSUMS:
   Device: c793851589633bc515b65e08a2b5a223bc87c45a
   DeviceKit: 461e525867e48e725f41699c1cab3100df1258ff
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
+  Kingfisher: 2f31cb75f3e98d3d4c406cbdcd9b263e956cfa67
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TRON: 7b9adeb678fe0e25433d207f6a734aaf145fa9b5
   Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: 46db8614e262ce1c78244a17b966decf840a1abd
+PODFILE CHECKSUM: ab3704e7beb78c9bf3d74810ff7f63678bf7d399
 
 COCOAPODS: 1.2.0

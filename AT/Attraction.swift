@@ -11,9 +11,9 @@ import SwiftyJSON
 
 struct Attraction {
     let id: String
-    let name: String
-    let shortDescription: String
-    var attractionImageUrls: [String]
-    let fullDescription: String
+    let name: String?
+    let shortDescription: String?
+    var attractionImageUrls: [String]?
+    let fullDescription: String?
 }
 

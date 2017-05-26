@@ -14,6 +14,7 @@ target 'AT' do
    pod 'TRON', '~> 2.0.0'
    pod 'Device', '~> 3.0.1'
    pod 'Reusable'
+   pod 'Kingfisher', '~> 3.0'
  
    
 end

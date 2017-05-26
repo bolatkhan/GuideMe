@@ -19,7 +19,7 @@ class ToursAndActivities: DatasourceCell {
             nameLabel.text = tour.name
             typeLabel.text = tour.typeName
             durationLabel.text = tour.duration
-            costLabel.text = "$"+String(tour.pricePerPerson)
+            costLabel.text = "$"+String(describing: tour.pricePerPerson)
         }
     }
     let tourImageView: CachedImageView = {
