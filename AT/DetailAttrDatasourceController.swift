@@ -30,47 +30,40 @@ class DetailAttrDatasourceController: DatasourceController {
         guard let attraction = attraction else { return }
         let detailDatasource = DetailDatasource()
         tour.forEach { (tour) in
-            detailDatasource.tours += [Tour(id: tour.id, typeName: tour.typeName, typeIconUrl: tour.typeIconUrl, hostName: tour.hostName, hostLogoUrl: tour.hostLogoUrl, hostNumber: tour.hostNumber, hostDescription: tour.hostDescription, transportation: tour.transportation, tourImageUrlString: tour.tourImageUrlString, connectedPlaces: tour.connectedPlaces, name: tour.name, amountOfPeople: tour.amountOfPeople, duration: tour.duration, whatWeWillDo: tour.whatWeWillDo, generalInfo: tour.generalInfo, pricePerPerson: tour.pricePerPerson, departsAt: tour.departsAt, languages: tour.languages, whatToWear: tour.whatToWear, priceIncludes: tour.priceIncludes, priceExcludes: tour.priceExcludes)]
+            detailDatasource.tours += [Tour(id: tour.id, transportation: tour.transportation, tourImageUrls: tour.tourImageUrls!, connectedPlaces: tour.connectedPlaces, durationType: tour.durationType, duration: tour.duration, amountOfPeople: tour.amountOfPeople, name: tour.name, price: tour.price, fullDescription: tour.fullDescription, languages: tour.languages, priceIncludes: tour.priceIncludes, priceExcludes: tour.priceExcludes)]
         }
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrls: attraction.attractionImageUrls, fullDescription: attraction.fullDescription)]
         detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription!)]
         self.datasource = detailDatasource
     }
-    let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
+    let tron = TRON(baseURL: "http://108.61.179.192")
     class Tours: JSONDecodable{
         let tours: [Tour]
         required init(json: JSON) throws {
             var tours = [Tour]()
             let array = json[].array
             for tourJson in array! {
+                //let tourHost = tourJson["host"].dictionary
+                //let hostName = tourHost?["name"]?.stringValue
+                //let hostLogoUrl = tourHost?["logo"]?.stringValue
+                //let hostNumber = tourHost?["phone_number"]?.intValue
+                //let hostDescription = tourHost?["description"]?.stringValue
                 let id = tourJson["id"].intValue
-                let tourType = tourJson["type"].dictionary
-                let typeName = tourType?["name"]?.stringValue
-                let typeIconUrl = tourType?["icon"]?.stringValue
-                
-                let tourHost = tourJson["host"].dictionary
-                let hostName = tourHost?["name"]?.stringValue
-                let hostLogoUrl = tourHost?["logo"]?.stringValue
-                let hostNumber = tourHost?["phone_number"]?.intValue
-                let hostDescription = tourHost?["description"]?.stringValue
-                
                 let transportation = tourJson["transportation"].stringValue
-                let tourImageUrl = tourJson["tour_images"].arrayValue
-                let urlString = String(describing: tourImageUrl[0])
+                let tourImageUrl = tourJson["images"].arrayObject as? [String]
+            
                 let connectedPlaces = tourJson["places"].stringValue
                 let name = tourJson["name"].stringValue
-                let amountOfPeople = tourJson["amount_of_people"].stringValue
-                let duration = tourJson["duration"].stringValue
-                let whatWeWillDo = tourJson["what_will_do"].stringValue
-                let generalInfo = tourJson["general_info"].stringValue
-                
-                let pricePerPerson = tourJson["price_per_person"].stringValue
-                let departsAt = tourJson["price_per_person"].stringValue
-                let languages = tourJson["languages"].stringValue
-                let whatToWear = tourJson["what_to_wear"].stringValue
+                let amountOfPeople = tourJson["guests"].stringValue
+                let durationType = tourJson["duration_step"].stringValue
+                let duration = tourJson["duration"].intValue
+                let pricePerPerson = tourJson["price"].stringValue
+                let fullDescription = tourJson["full_description"].stringValue
+                let languages = tourJson["langs"].stringValue
                 let priceIncludes = tourJson["price_includes"].stringValue
                 let priceExcludes = tourJson["price_excludes"].stringValue
-                let tour = Tour(id: id, typeName: typeName, typeIconUrl: typeIconUrl, hostName: hostName, hostLogoUrl: hostLogoUrl, hostNumber: hostNumber, hostDescription: hostDescription, transportation: transportation, tourImageUrlString: urlString, connectedPlaces: connectedPlaces, name: name, amountOfPeople: amountOfPeople, duration: duration, whatWeWillDo: whatWeWillDo, generalInfo: generalInfo, pricePerPerson: pricePerPerson, departsAt: departsAt, languages: languages, whatToWear: whatToWear, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
+                
+                let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrl!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
                 tours.append(tour)
             }
             self.tours = tours
@@ -83,7 +76,7 @@ class DetailAttrDatasourceController: DatasourceController {
     }
     fileprivate func fetchTourFeed(){
         let request:APIRequest<Tours,JSONError> = tron.request("/api/tours")
-        request.parameters = ["place_id":(attraction!.id)]
+        request.parameters = ["places":(attraction!.id)]
         request.perform(withSuccess: {(tours) in
             self.tour = tours.tours
             self.loadData()

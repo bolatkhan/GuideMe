@@ -12,7 +12,7 @@ import SwiftyJSON
 
 struct ServiceTours {
     
-    let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
+    let tron = TRON(baseURL: "http://108.61.179.192/")
     static let sharedInstance = ServiceTours()
     func fetchToursFeed(completion: @escaping (TourDatasource?, Error? ) -> ()) {
         let request: APIRequest<TourDatasource, JSONError> = tron.request("api/tours")

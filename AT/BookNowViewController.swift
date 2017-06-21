@@ -10,7 +10,6 @@ import UIKit
 import EasyPeasy
 
 class BookNowViewController: UIViewController {
-    
 //    let text = "Coming soon.."
 //    
 //    let labelView: UILabel = {
@@ -26,7 +25,6 @@ class BookNowViewController: UIViewController {
         view.layer.borderColor = UIColor(white: 0.8, alpha: 1.0).cgColor
         return view
     }()
-    
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = UIColor.cloudColor
@@ -38,16 +36,15 @@ class BookNowViewController: UIViewController {
 //        textField.delegate = self
         return textField
     }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Book now"
         view.addSubview(loginTextField)
-        
 //        labelView.text = text
         view.backgroundColor = .white
         loginTextField <- [
             Height(49),
+            Width(200),
             Top(12),
             Left(10),
             Right(10)

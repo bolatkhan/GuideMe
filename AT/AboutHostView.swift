@@ -46,8 +46,7 @@ class AboutHostView: UIView {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
-        textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplifyYourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify"
-//        textView.backgroundColor = .clear
+        textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. "
         textView.isEditable = false
         textView.isScrollEnabled = false
         return textView

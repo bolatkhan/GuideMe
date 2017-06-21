@@ -11,15 +11,14 @@ import EasyPeasy
 
 
 class ToursAndActivities: DatasourceCell {
-    var staticURL = "http://karibay.pythonanywhere.com/"
+    var staticURL = "http://108.61.179.192/"
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
-            tourImageView.loadImage(urlString: staticURL+tour.tourImageUrlString!)
+            tourImageView.loadImage(urlString: staticURL+(tour.tourImageUrls?[0])!)
             nameLabel.text = tour.name
-            typeLabel.text = tour.typeName
-            durationLabel.text = tour.duration
-            costLabel.text = "$"+String(describing: tour.pricePerPerson)
+            durationLabel.text = String(describing: tour.duration) + " hours"
+            costLabel.text = "$"+String(describing: tour.price)
         }
     }
     let tourImageView: CachedImageView = {
@@ -35,15 +34,15 @@ class ToursAndActivities: DatasourceCell {
         label.numberOfLines = 0
         return label
     }()
-    let typeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Nature Landmarks"
-        label.font = UIFont.avenirMedium(fontSize: 12)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.backgroundColor = .clear
-        return label
-    }()
+//    let typeLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "Nature Landmarks"
+//        label.font = UIFont.avenirMedium(fontSize: 12)
+//        label.textColor = .black
+//        label.numberOfLines = 0
+//        label.backgroundColor = .clear
+//        return label
+//    }()
     let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -74,7 +73,7 @@ class ToursAndActivities: DatasourceCell {
         backgroundColor = .white
         addSubview(tourImageView)
         addSubview(nameLabel)
-        addSubview(typeLabel)
+//        addSubview(typeLabel)
         addSubview(ratingLabel)
         addSubview(durationLabel)
         addSubview(costLabel)
@@ -90,20 +89,20 @@ class ToursAndActivities: DatasourceCell {
             Right(12),
             Left(8).to(tourImageView),
         ]
-        typeLabel <- [
-            Top(8).to(nameLabel),
-            Right(8).to(durationLabel),
-            Left(8).to(tourImageView)
-        ]
+//        typeLabel <- [
+//            Top(8).to(nameLabel),
+//            Right(8).to(durationLabel),
+//            Left(8).to(tourImageView)
+//        ]
         durationLabel <- [
             Top(8).to(nameLabel),
-            Right(8).to(costLabel),
-            Left(8).to(typeLabel)
+            Right(12),
+            Left(8).to(tourImageView)
         ]
         costLabel <- [
-            Top(8).to(nameLabel),
+            Top(8).to(durationLabel),
             Right(12),
-            Left(8).to(durationLabel)
+            Left(8).to(tourImageView)
         ]
      }
 }

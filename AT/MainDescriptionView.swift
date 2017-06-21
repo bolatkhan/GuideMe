@@ -11,7 +11,7 @@ import EasyPeasy
 import LBTAComponents
 import Device
 
-class MainDescriptionView: UIView {
+class MainDescriptionView: DatasourceCell {
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -21,11 +21,14 @@ class MainDescriptionView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     let tourImageView: CachedImageView = {
         let imageView = CachedImageView()
         imageView.clipsToBounds = true
         return imageView
     }()
+    
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Sorry, there is no tours yet"
@@ -73,12 +76,11 @@ class MainDescriptionView: UIView {
         label.text = "2"
         return label
     }()
-       func setupViews() {
+       override func setupViews() {
         addSubview(tourImageView)
         addSubview(nameLabel)
         addSubview(tourType)
         addSubview(ratingLabel)
-        
         addSubview(peopleImage)
         addSubview(peopleLabel)
         addSubview(peopleText)
@@ -96,6 +98,8 @@ class MainDescriptionView: UIView {
             Right(0),
             Left(0)
         ]
+        
+        
         nameLabel <- [
             Top(8).to(tourImageView),
             Right(10),

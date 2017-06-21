@@ -20,7 +20,7 @@ class DetailDatasource: Datasource {
         return [overview]
     }()
     var tours: [Tour] = {
-        let firstTour = Tour(id: 0, typeName: "", typeIconUrl: "", hostName: "", hostLogoUrl: "", hostNumber: 0, hostDescription: "", transportation: "", tourImageUrlString: "", connectedPlaces: "", name: "", amountOfPeople: "", duration: "", whatWeWillDo: "", generalInfo: "", pricePerPerson: "", departsAt: "", languages: "", whatToWear: "", priceIncludes: "", priceExcludes: "")
+        let firstTour = Tour(id: 0, transportation: "", tourImageUrls: [""], connectedPlaces: "", durationType: "", duration: 0, amountOfPeople: "", name: "", price: "", fullDescription: "", languages: "", priceIncludes: "", priceExcludes: "")
         return []
     }()
     let reviews: [Reviews] = {

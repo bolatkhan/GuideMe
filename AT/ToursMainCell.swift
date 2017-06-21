@@ -11,13 +11,13 @@ import EasyPeasy
 
 class ToursCell: DatasourceCell {
     
-    var staticURL = "http://karibay.pythonanywhere.com/"
+    var staticURL = "http://108.61.179.192/"
     override var datasourceItem: Any?{
         didSet {
             guard let tour = datasourceItem as? Tour else { return }
             tourName.text = tour.name
-            tourShortDescription.text = tour.typeName
-            cellBackgroundImageView.loadImage(urlString: staticURL+tour.tourImageUrlString!)
+            cellBackgroundImageView.loadImage(urlString: staticURL+(tour.tourImageUrls?[0])!)
+            //(attraction.attractionImageUrls?[0])!
         }
     }
     lazy var imgOverlay: UIView = {
@@ -55,12 +55,10 @@ class ToursCell: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         backgroundColor = .black
-        
         addSubview(cellBackgroundImageView)
         cellBackgroundImageView.addSubview(imgOverlay)
         cellBackgroundImageView.addSubview(tourName)
         cellBackgroundImageView.addSubview(tourShortDescription)
-        
         cellBackgroundImageView <- [
             Edges(0)
         ]
@@ -72,9 +70,5 @@ class ToursCell: DatasourceCell {
             Left(12),
             Right(12)
         ]
-//        tourShortDescription <- [
-//            Bottom(5).to(tourName),
-//            CenterX()
-//        ]
     }
 }

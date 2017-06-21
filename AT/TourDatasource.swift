@@ -17,35 +17,27 @@ class TourDatasource: Datasource, JSONDecodable {
         let tourArrayJson = json[].array
         for tourJson in (tourArrayJson)! {
             let id = tourJson["id"].intValue
-            let tourType = tourJson["type"].dictionary
-            let typeName = tourType?["name"]?.stringValue
-            let typeIconUrl = tourType?["icon"]?.stringValue
             
-            let tourHost = tourJson["host"].dictionary
-            let hostName = tourHost?["name"]?.stringValue
-            let hostLogoUrl = tourHost?["logo"]?.stringValue
-            let hostNumber = tourHost?["phone_number"]?.intValue
-            let hostDescription = tourHost?["description"]?.stringValue
+//          let tourHost = tourJson["host"].dictionary
+//          let hostName = tourHost?["name"]?.stringValue
+//          let hostLogoUrl = tourHost?["logo"]?.stringValue
+//          let hostNumber = tourHost?["phone_number"]?.intValue
+//          let hostDescription = tourHost?["description"]?.stringValue
             
             let transportation = tourJson["transportation"].stringValue
-            let tourImageUrl = tourJson["tour_images"].arrayValue
-            let urlString = String(describing: tourImageUrl[0])
+            let tourImageUrls = tourJson["images"].arrayObject as? [String]
             let connectedPlaces = tourJson["places"].stringValue
             let name = tourJson["name"].stringValue
-            let amountOfPeople = tourJson["amount_of_people"].stringValue
-            let duration = tourJson["duration"].stringValue
-            let whatWeWillDo = tourJson["what_will_do"].stringValue
-            let generalInfo = tourJson["general_info"].stringValue
-            
-            let pricePerPerson = tourJson["price_per_person"].stringValue
-            let departsAt = tourJson["price_per_person"].stringValue
-            let languages = tourJson["languages"].stringValue
-            let whatToWear = tourJson["what_to_wear"].stringValue
+            let amountOfPeople = tourJson["guests"].stringValue
+            let durationType = tourJson["duration_step"].stringValue
+            let duration = tourJson["duration"].intValue
+            let pricePerPerson = tourJson["price"].stringValue
+            let fullDescription = tourJson["full_description"].stringValue
+            let languages = tourJson["langs"].stringValue
             let priceIncludes = tourJson["price_includes"].stringValue
             let priceExcludes = tourJson["price_excludes"].stringValue
             
-            
-            let tour = Tour(id: id, typeName: typeName!, typeIconUrl:typeIconUrl!, hostName: hostName, hostLogoUrl: hostLogoUrl, hostNumber: hostNumber, hostDescription: hostDescription, transportation: transportation, tourImageUrlString: urlString, connectedPlaces: connectedPlaces, name: name, amountOfPeople: amountOfPeople, duration: duration, whatWeWillDo: whatWeWillDo, generalInfo: generalInfo, pricePerPerson: pricePerPerson, departsAt: departsAt, languages: languages, whatToWear: whatToWear, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
+            let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrls!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
             tours.append(tour)
         }
         self.tours = tours

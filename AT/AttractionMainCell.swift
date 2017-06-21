@@ -12,21 +12,17 @@ import Kingfisher
 
 class AttractionCell: DatasourceCell {
     
-    var staticURL = "http://karibay.pythonanywhere.com/"
+    var staticURL = "http://108.61.179.192/"
     var imgUrl = String()
     override var datasourceItem: Any?{
         didSet {
             guard let attraction = datasourceItem as? Attraction else { return }
             tourName.text = attraction.name
             tourShortDescription.text = attraction.shortDescription
-//            cellBackgroundImageView.loadImage(urlString: staticURL+(attraction.attractionImageUrls[0]))
             self.imgUrl = staticURL+(attraction.attractionImageUrls?[0])!
             cellBackgroundImageView.kf.indicatorType = .activity
             let image = UIImage(named: "placeholder")
-
             cellBackgroundImageView.kf.setImage(with: URL(string: imgUrl), placeholder: image)
-
-            
         }
     }
     lazy var imgOverlay: UIView = {

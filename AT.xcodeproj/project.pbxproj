@@ -18,7 +18,7 @@
 		8E071A621E715DE4002F8FC6 /* ToursAndActivitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A611E715DE4002F8FC6 /* ToursAndActivitiesCell.swift */; };
 		8E071A641E715E03002F8FC6 /* AttractionReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */; };
 		8E071A661E715E1C002F8FC6 /* AttractionLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */; };
-		8E071A681E715E7A002F8FC6 /* AttractionCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A671E715E7A002F8FC6 /* AttractionCells.swift */; };
+		8E071A681E715E7A002F8FC6 /* AttractionMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A671E715E7A002F8FC6 /* AttractionMainCell.swift */; };
 		8E071A6A1E715EF1002F8FC6 /* DetailDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E071A691E715EF1002F8FC6 /* DetailDatasource.swift */; };
 		8E0BF9C51E712A0500B0F1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0BF9C41E712A0500B0F1BA /* Main.storyboard */; };
 		8E0BF9C71E71332000B0F1BA /* AttractionDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0BF9C61E71332000B0F1BA /* AttractionDatasourceController.swift */; };
@@ -31,8 +31,8 @@
 		8E50A8221ECDAAB50004C2E4 /* ServiceTour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8211ECDAAB50004C2E4 /* ServiceTour.swift */; };
 		8E50A8241ECDAC9E0004C2E4 /* TourDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8231ECDAC9E0004C2E4 /* TourDatasource.swift */; };
 		8E50A8261ECDAE460004C2E4 /* TourDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8251ECDAE460004C2E4 /* TourDatasourceController.swift */; };
-		8E50A8281ECDB26E0004C2E4 /* ToursCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8271ECDB26E0004C2E4 /* ToursCell.swift */; };
-		8E50A82A1ECF1ACA0004C2E4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8291ECF1ACA0004C2E4 /* ImageCollectionViewCell.swift */; };
+		8E50A8281ECDB26E0004C2E4 /* ToursMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8271ECDB26E0004C2E4 /* ToursMainCell.swift */; };
+		8E50A82A1ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E50A8291ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift */; };
 		8E6792801E38764E00F9CDB1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */; };
 		8E7868A81E766B2A0094C2C4 /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7868A71E766B2A0094C2C4 /* Titles.swift */; };
 		8E7868AA1E7A94740094C2C4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7868A91E7A94740094C2C4 /* HeaderCell.swift */; };
@@ -71,7 +71,7 @@
 		8E071A611E715DE4002F8FC6 /* ToursAndActivitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursAndActivitiesCell.swift; sourceTree = "<group>"; };
 		8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionReviewsCell.swift; sourceTree = "<group>"; };
 		8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionLocationCell.swift; sourceTree = "<group>"; };
-		8E071A671E715E7A002F8FC6 /* AttractionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCells.swift; sourceTree = "<group>"; };
+		8E071A671E715E7A002F8FC6 /* AttractionMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionMainCell.swift; sourceTree = "<group>"; };
 		8E071A691E715EF1002F8FC6 /* DetailDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatasource.swift; sourceTree = "<group>"; };
 		8E0BF9C31E712A0500B0F1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E0BF9C61E71332000B0F1BA /* AttractionDatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionDatasourceController.swift; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 		8E50A8211ECDAAB50004C2E4 /* ServiceTour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTour.swift; sourceTree = "<group>"; };
 		8E50A8231ECDAC9E0004C2E4 /* TourDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDatasource.swift; sourceTree = "<group>"; };
 		8E50A8251ECDAE460004C2E4 /* TourDatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDatasourceController.swift; sourceTree = "<group>"; };
-		8E50A8271ECDB26E0004C2E4 /* ToursCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursCell.swift; sourceTree = "<group>"; };
-		8E50A8291ECF1ACA0004C2E4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = Assets.xcassets/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E50A8271ECDB26E0004C2E4 /* ToursMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursMainCell.swift; sourceTree = "<group>"; };
+		8E50A8291ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttrImageCollectionViewCell.swift; path = Assets.xcassets/AttrImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		8E7868A71E766B2A0094C2C4 /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
 		8E7868A91E7A94740094C2C4 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		8E02EF291E2E311600AB0CF4 /* AT */ = {
 			isa = PBXGroup;
 			children = (
-				8E8D0A721E7C0B5D00E7104C /* Service */,
 				8E02EF411E2E369200AB0CF4 /* Supporting files */,
+				8E8D0A721E7C0B5D00E7104C /* Service */,
 				8E3DC59D1E41A01D00FD7E8A /* Extension */,
 				8EB9A3551E39AF7E00CE0298 /* Views */,
 				8EB9A3541E39AF6D00CE0298 /* Models */,
@@ -167,6 +167,7 @@
 		8E02EF411E2E369200AB0CF4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				8E02EF2A1E2E311600AB0CF4 /* AppDelegate.swift */,
 				8E0BF9C41E712A0500B0F1BA /* Main.storyboard */,
 				8E02EF361E2E311600AB0CF4 /* LaunchScreen.storyboard */,
 				8E02EF391E2E311600AB0CF4 /* Info.plist */,
@@ -188,17 +189,8 @@
 		8E8C08BF1EA71D3F00B06616 /* TourViews */ = {
 			isa = PBXGroup;
 			children = (
-				8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */,
-				8E2811101EA4A26F00DAD76F /* AboutHostView.swift */,
-				8E8C08BB1EA62D8500B06616 /* WhatWeWillDoView.swift */,
-				8E8C08BD1EA6313900B06616 /* WhereWillBeView.swift */,
-				8E8C08C01EA71D7D00B06616 /* DetailsPriceView.swift */,
-				8E8C08C21EA72BA700B06616 /* DetailDepartView.swift */,
-				8E8C08C41EA72F4E00B06616 /* DetailLanguageView.swift */,
-				8E8C08C61EA731DA00B06616 /* DetailTransportationView.swift */,
-				8E8C08C81EA74EC700B06616 /* DetailWhattoWearView.swift */,
-				8E8C08CA1EA751B700B06616 /* PriceIncludesView.swift */,
-				8E8C08CC1EA7679500B06616 /* PriceExcludesView.swift */,
+				8E50A8271ECDB26E0004C2E4 /* ToursMainCell.swift */,
+				8ED9BD9E1EFA571400B67A45 /* ToursCells */,
 			);
 			name = TourViews;
 			sourceTree = "<group>";
@@ -215,8 +207,11 @@
 		8EB9A3531E39AF5900CE0298 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E02EF2A1E2E311600AB0CF4 /* AppDelegate.swift */,
-				8EB9A3561E39B26200CE0298 /* Main */,
+				8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */,
+				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
+				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
+				8ED9BDA01EFA5B8800B67A45 /* TourViewController */,
+				8ED9BD9F1EFA5B7600B67A45 /* AttractionViewControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -225,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				8E071A561E715795002F8FC6 /* AttractionDatasource.swift */,
-				8EBDA9FA1E72705A00571F9C /* Attraction.swift */,
 				8E071A691E715EF1002F8FC6 /* DetailDatasource.swift */,
+				8EBDA9FA1E72705A00571F9C /* Attraction.swift */,
 				8E7868AF1E7A9C760094C2C4 /* Images.swift */,
 				8E7868AD1E7A9A200094C2C4 /* Overview.swift */,
 				8EBDA9FC1E7270B300571F9C /* Tour.swift */,
@@ -240,34 +235,71 @@
 		8EB9A3551E39AF7E00CE0298 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8E071A671E715E7A002F8FC6 /* AttractionCells.swift */,
-				8E7868A91E7A94740094C2C4 /* HeaderCell.swift */,
-				8E071A5F1E715DB1002F8FC6 /* AttractionImagesCell.swift */,
-				8E071A5C1E715D87002F8FC6 /* AttractionOverviewCell.swift */,
-				8E071A611E715DE4002F8FC6 /* ToursAndActivitiesCell.swift */,
-				8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */,
-				8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */,
-				8E7868AB1E7A94BB0094C2C4 /* FooterCell.swift */,
+				8ED9BD9C1EF94FA300B67A45 /* AttractionViews */,
 				8E8C08BF1EA71D3F00B06616 /* TourViews */,
-				8E50A8271ECDB26E0004C2E4 /* ToursCell.swift */,
-				8E50A8291ECF1ACA0004C2E4 /* ImageCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		8EB9A3561E39B26200CE0298 /* Main */ = {
+		8ED9BD9C1EF94FA300B67A45 /* AttractionViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E071A671E715E7A002F8FC6 /* AttractionMainCell.swift */,
+				8ED9BD9D1EFA56F400B67A45 /* AttractionCells */,
+				8E7868A91E7A94740094C2C4 /* HeaderCell.swift */,
+				8E7868AB1E7A94BB0094C2C4 /* FooterCell.swift */,
+			);
+			name = AttractionViews;
+			sourceTree = "<group>";
+		};
+		8ED9BD9D1EFA56F400B67A45 /* AttractionCells */ = {
+			isa = PBXGroup;
+			children = (
+				8E071A5F1E715DB1002F8FC6 /* AttractionImagesCell.swift */,
+				8E50A8291ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift */,
+				8E071A5C1E715D87002F8FC6 /* AttractionOverviewCell.swift */,
+				8E071A611E715DE4002F8FC6 /* ToursAndActivitiesCell.swift */,
+				8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */,
+				8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */,
+			);
+			name = AttractionCells;
+			sourceTree = "<group>";
+		};
+		8ED9BD9E1EFA571400B67A45 /* ToursCells */ = {
+			isa = PBXGroup;
+			children = (
+				8E2811121EA4D9B400DAD76F /* MainDescriptionView.swift */,
+				8E2811101EA4A26F00DAD76F /* AboutHostView.swift */,
+				8E8C08BB1EA62D8500B06616 /* WhatWeWillDoView.swift */,
+				8E8C08BD1EA6313900B06616 /* WhereWillBeView.swift */,
+				8E8C08C01EA71D7D00B06616 /* DetailsPriceView.swift */,
+				8E8C08C21EA72BA700B06616 /* DetailDepartView.swift */,
+				8E8C08C41EA72F4E00B06616 /* DetailLanguageView.swift */,
+				8E8C08C61EA731DA00B06616 /* DetailTransportationView.swift */,
+				8E8C08C81EA74EC700B06616 /* DetailWhattoWearView.swift */,
+				8E8C08CA1EA751B700B06616 /* PriceIncludesView.swift */,
+				8E8C08CC1EA7679500B06616 /* PriceExcludesView.swift */,
+			);
+			name = ToursCells;
+			sourceTree = "<group>";
+		};
+		8ED9BD9F1EFA5B7600B67A45 /* AttractionViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8E0BF9C61E71332000B0F1BA /* AttractionDatasourceController.swift */,
 				8E071A581E715977002F8FC6 /* DetailAttrDatasourceController.swift */,
 				8E1E3EB81E6004EE006CA49F /* OverviewViewController.swift */,
-				8EBEE2FE1E9C9F5A006ED508 /* TourViewController.swift */,
-				8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */,
-				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
-				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
-				8E50A8251ECDAE460004C2E4 /* TourDatasourceController.swift */,
 			);
-			name = Main;
+			name = AttractionViewControllers;
+			sourceTree = "<group>";
+		};
+		8ED9BDA01EFA5B8800B67A45 /* TourViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E50A8251ECDAE460004C2E4 /* TourDatasourceController.swift */,
+				8EBEE2FE1E9C9F5A006ED508 /* TourViewController.swift */,
+			);
+			name = TourViewController;
 			sourceTree = "<group>";
 		};
 		9E45E0B7154AE3AC479CCBEF /* Frameworks */ = {
@@ -407,7 +439,7 @@
 				8E3DC59F1E41A06D00FD7E8A /* Tints.swift in Sources */,
 				8E3DC5A11E41A25100FD7E8A /* Avenir.swift in Sources */,
 				8E8C08BE1EA6313900B06616 /* WhereWillBeView.swift in Sources */,
-				8E50A82A1ECF1ACA0004C2E4 /* ImageCollectionViewCell.swift in Sources */,
+				8E50A82A1ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift in Sources */,
 				8E2811111EA4A26F00DAD76F /* AboutHostView.swift in Sources */,
 				8E8C08C91EA74EC700B06616 /* DetailWhattoWearView.swift in Sources */,
 				8E50A8241ECDAC9E0004C2E4 /* TourDatasource.swift in Sources */,
@@ -417,9 +449,9 @@
 				8E071A661E715E1C002F8FC6 /* AttractionLocationCell.swift in Sources */,
 				8E1FFE951EAA07A300470D7B /* BookNowViewController.swift in Sources */,
 				8E50A8261ECDAE460004C2E4 /* TourDatasourceController.swift in Sources */,
-				8E50A8281ECDB26E0004C2E4 /* ToursCell.swift in Sources */,
+				8E50A8281ECDB26E0004C2E4 /* ToursMainCell.swift in Sources */,
 				8E071A601E715DB1002F8FC6 /* AttractionImagesCell.swift in Sources */,
-				8E071A681E715E7A002F8FC6 /* AttractionCells.swift in Sources */,
+				8E071A681E715E7A002F8FC6 /* AttractionMainCell.swift in Sources */,
 				8E071A621E715DE4002F8FC6 /* ToursAndActivitiesCell.swift in Sources */,
 				8E8C08CB1EA751B700B06616 /* PriceIncludesView.swift in Sources */,
 				8E2811131EA4D9B400DAD76F /* MainDescriptionView.swift in Sources */,

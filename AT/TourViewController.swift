@@ -32,10 +32,10 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         let view = WhatWeWillDoView()
         return view
     }()
-    lazy var whereWillBeView: WhereWillBeView = {
-        let view = WhereWillBeView()
-        return view
-    }()
+//    lazy var whereWillBeView: WhereWillBeView = {
+//        let view = WhereWillBeView()
+//        return view
+//    }()
     
     lazy var detailsPriceView: DetailsPriceView = {
         let view = DetailsPriceView()
@@ -54,10 +54,10 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    lazy var detailWearView: DetailWhatToWearView = {
-        let view = DetailWhatToWearView()
-        return view
-    }()
+//    lazy var detailWearView: DetailWhatToWearView = {
+//        let view = DetailWhatToWearView()
+//        return view
+//    }()
     lazy var priceIncludesView: PriceIncludesView = {
         let view = PriceIncludesView()
         return view
@@ -86,16 +86,16 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         self.title = "Tour Overview"
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1735)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1355)
         scrollView.addSubview(mainDescriptionView)
         scrollView.addSubview(aboutHostView)
         scrollView.addSubview(whatWeWillDoView)
-        scrollView.addSubview(whereWillBeView)
+//        scrollView.addSubview(whereWillBeView)
         scrollView.addSubview(detailsPriceView)
         scrollView.addSubview(detailsDepartView)
         scrollView.addSubview(detailLanguageView)
         scrollView.addSubview(detailTransportationView)
-        scrollView.addSubview(detailWearView)
+//        scrollView.addSubview(detailWearView)
         scrollView.addSubview(priceIncludesView)
         scrollView.addSubview(priceExcludesView)
         scrollView.addSubview(bookButton)
@@ -121,16 +121,16 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(10).to(aboutHostView),
             CenterX(0)
         ]
-        whereWillBeView <- [
-            Height(300),
-            Width().like(view),
-            Top(10).to(whatWeWillDoView),
-            CenterX(0)
-        ]
+//        whereWillBeView <- [
+//            Height(300),
+//            Width().like(view),
+//            Top(10).to(whatWeWillDoView),
+//            CenterX(0)
+//        ]
         detailsPriceView <- [
             Height(32),
             Width().like(view),
-            Top(10).to(whereWillBeView),
+            Top(10).to(whatWeWillDoView),
             CenterX(0)
         ]
         detailsDepartView <- [
@@ -151,16 +151,16 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(1).to(detailLanguageView),
             CenterX(0)
         ]
-        detailWearView <- [
-            Height(96),
-            Width().like(view),
-            Top(1).to(detailTransportationView),
-            CenterX(0)
-        ]
+//        detailWearView <- [
+//            Height(96),
+//            Width().like(view),
+//            Top(1).to(detailTransportationView),
+//            CenterX(0)
+//        ]
         priceIncludesView <- [
             Height(64),
             Width().like(view),
-            Top(1).to(detailWearView),
+            Top(1).to(detailTransportationView),
             CenterX(0)
         ]
         priceExcludesView <- [
@@ -178,24 +178,21 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let staticURL = "http://karibay.pythonanywhere.com/"
+        let staticURL = "http://108.61.179.192/"
         mainDescriptionView.nameLabel.text = tour?.name
-        mainDescriptionView.tourImageView.loadImage(urlString: staticURL+(tour?.tourImageUrlString)!)
-        mainDescriptionView.tourType.text = tour?.typeName
-        mainDescriptionView.durationLabel.text = tour?.duration
+        mainDescriptionView.tourImageView.loadImage(urlString: staticURL+(tour?.tourImageUrls?[0])!)
+        if let temp = tour?.duration {
+            mainDescriptionView.durationLabel.text=String(describing: temp) + " hours"
+        }
         mainDescriptionView.peopleLabel.text = tour?.amountOfPeople
 //        aboutHostView.hostImage.loadImage(urlString: staticURL+(tour?.hostLogoUrl)!)
-        aboutHostView.hostName.text = tour?.hostName
-        aboutHostView.hostOverview.text = tour?.hostDescription
+//        aboutHostView.hostName.text = tour?.hostName
+//        aboutHostView.hostOverview.text = tour?.hostDescription
+        whatWeWillDoView.eventOverview.text = tour?.fullDescription
         
-        whatWeWillDoView.eventOverview.text = tour?.whatWeWillDo
-        whereWillBeView.eventOverview.text = tour?.generalInfo
-        
-        detailsPriceView.priceView.text = tour?.pricePerPerson
-        detailsDepartView.departTextView.text = tour?.departsAt
+        detailsPriceView.priceView.text = tour?.price
         detailLanguageView.languageTextView.text = tour?.languages
         detailTransportationView.transportationTextView.text = tour?.transportation
-        detailWearView.wearTextView.text = tour?.whatToWear
         priceIncludesView.priceIncludesTextView.text = tour?.priceIncludes
         priceExcludesView.priceExcludesTextView.text = tour?.priceExcludes
         

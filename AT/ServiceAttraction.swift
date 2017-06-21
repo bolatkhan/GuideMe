@@ -12,7 +12,7 @@ import SwiftyJSON
 
 struct ServiceAttraction {
     
-    let tron = TRON(baseURL: "http://karibay.pythonanywhere.com")
+    let tron = TRON(baseURL: "http://108.61.179.192/")
 
 
     static let sharedInstance = ServiceAttraction()
