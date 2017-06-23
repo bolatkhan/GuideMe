@@ -34,15 +34,6 @@ class ToursAndActivities: DatasourceCell {
         label.numberOfLines = 0
         return label
     }()
-//    let typeLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Nature Landmarks"
-//        label.font = UIFont.avenirMedium(fontSize: 12)
-//        label.textColor = .black
-//        label.numberOfLines = 0
-//        label.backgroundColor = .clear
-//        return label
-//    }()
     let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -73,7 +64,6 @@ class ToursAndActivities: DatasourceCell {
         backgroundColor = .white
         addSubview(tourImageView)
         addSubview(nameLabel)
-//        addSubview(typeLabel)
         addSubview(ratingLabel)
         addSubview(durationLabel)
         addSubview(costLabel)
@@ -89,11 +79,6 @@ class ToursAndActivities: DatasourceCell {
             Right(12),
             Left(8).to(tourImageView),
         ]
-//        typeLabel <- [
-//            Top(8).to(nameLabel),
-//            Right(8).to(durationLabel),
-//            Left(8).to(tourImageView)
-//        ]
         durationLabel <- [
             Top(8).to(nameLabel),
             Right(12),

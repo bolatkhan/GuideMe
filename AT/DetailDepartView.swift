@@ -21,14 +21,11 @@ class DetailsDepartView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
     let departLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "Departs at"
-        //        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -38,13 +35,10 @@ class DetailsDepartView: UIView {
         textView.textColor = .black
         textView.text = "by appointment"
         textView.textAlignment = .right
-        //        textView.backgroundColor = .clear
         textView.isEditable = false
         textView.isScrollEnabled = false
         return textView
     }()
-    
-    
     func setupViews() {
         addSubview(departLabel)
         addSubview(departTextView)

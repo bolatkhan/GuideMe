@@ -22,17 +22,13 @@ class PriceIncludesView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
     let priceIncludesLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "Price includes"
-        //        textView.backgroundColor = .clear
         return textView
     }()
-    
     let priceIncludesTextView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 10)
@@ -41,7 +37,6 @@ class PriceIncludesView: UIView {
         textView.textAlignment = .left
         textView.isEditable = false
         textView.isScrollEnabled = false
-
         return textView
     }()
     func setupViews() {

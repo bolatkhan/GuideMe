@@ -17,7 +17,6 @@ class ToursCell: DatasourceCell {
             guard let tour = datasourceItem as? Tour else { return }
             tourName.text = tour.name
             cellBackgroundImageView.loadImage(urlString: staticURL+(tour.tourImageUrls?[0])!)
-            //(attraction.attractionImageUrls?[0])!
         }
     }
     lazy var imgOverlay: UIView = {

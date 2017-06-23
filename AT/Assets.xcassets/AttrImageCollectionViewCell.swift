@@ -19,7 +19,6 @@ class ImageCollectionViewCell: UICollectionViewCell, Reusable {
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
         return overlay
     }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(imageView)

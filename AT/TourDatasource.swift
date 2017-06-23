@@ -18,11 +18,10 @@ class TourDatasource: Datasource, JSONDecodable {
         for tourJson in (tourArrayJson)! {
             let id = tourJson["id"].intValue
             
-//          let tourHost = tourJson["host"].dictionary
-//          let hostName = tourHost?["name"]?.stringValue
-//          let hostLogoUrl = tourHost?["logo"]?.stringValue
-//          let hostNumber = tourHost?["phone_number"]?.intValue
-//          let hostDescription = tourHost?["description"]?.stringValue
+            let tourHost = tourJson["host"].dictionary
+            let hostName = tourHost?["name"]?.stringValue
+            let hostLogoUrl = tourHost?["logo"]?.stringValue
+            let hostDescription = tourHost?["info"]?.stringValue
             
             let transportation = tourJson["transportation"].stringValue
             let tourImageUrls = tourJson["images"].arrayObject as? [String]
@@ -37,7 +36,7 @@ class TourDatasource: Datasource, JSONDecodable {
             let priceIncludes = tourJson["price_includes"].stringValue
             let priceExcludes = tourJson["price_excludes"].stringValue
             
-            let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrls!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
+            let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrls!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes, hostName: hostName, hostLogoUrl: hostLogoUrl, hostDescription: hostDescription)
             tours.append(tour)
         }
         self.tours = tours

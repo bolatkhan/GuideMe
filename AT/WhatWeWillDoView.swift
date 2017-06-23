@@ -20,15 +20,12 @@ class WhatWeWillDoView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
     let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "What we'll do"
         label.font = UIFont.avenirMedium(fontSize: 24)
         return label
     }()
-    
-   
     let eventOverview: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 14)
@@ -40,8 +37,6 @@ class WhatWeWillDoView: UIView {
 
         return textView
     }()
-    
-    
     func setupViews() {
         addSubview(headerLabel)
         addSubview(eventOverview)

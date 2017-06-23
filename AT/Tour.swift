@@ -23,7 +23,7 @@ struct Tour {
     let priceIncludes: String?
     let priceExcludes: String?
 
-//    let hostName: String?
-//    let hostLogoUrl: String?
-//    let hostDescription: String?    
+    let hostName: String?
+    let hostLogoUrl: String?
+    let hostDescription: String?    
 }

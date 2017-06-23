@@ -15,28 +15,19 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
 
     var scrollView: UIScrollView!
     var containerView = UIView()
-    
     var tour: Tour?
-    
     lazy var mainDescriptionView: MainDescriptionView = {
         let view = MainDescriptionView()
         return view
     }()
-    
     lazy var aboutHostView: AboutHostView = {
         let view = AboutHostView()
         return view
     }()
-    
     lazy var whatWeWillDoView: WhatWeWillDoView = {
         let view = WhatWeWillDoView()
         return view
     }()
-//    lazy var whereWillBeView: WhereWillBeView = {
-//        let view = WhereWillBeView()
-//        return view
-//    }()
-    
     lazy var detailsPriceView: DetailsPriceView = {
         let view = DetailsPriceView()
         return view
@@ -53,11 +44,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         let view = DetailTransportationView()
         return view
     }()
-    
-//    lazy var detailWearView: DetailWhatToWearView = {
-//        let view = DetailWhatToWearView()
-//        return view
-//    }()
     lazy var priceIncludesView: PriceIncludesView = {
         let view = PriceIncludesView()
         return view
@@ -66,7 +52,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         let view = PriceExcludesView()
         return view
     }()
-    
     lazy var bookButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 241/255, green: 79/255, blue: 99/255, alpha: 1.0)
@@ -76,12 +61,10 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         button.addTarget(self, action: #selector(presentBookViewController), for: .touchUpInside)
         return button
     }()
-    
     func presentBookViewController() {
         let vc = BookNowViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     private func setupViews() {
         self.title = "Tour Overview"
         self.scrollView = UIScrollView()
@@ -90,12 +73,10 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(mainDescriptionView)
         scrollView.addSubview(aboutHostView)
         scrollView.addSubview(whatWeWillDoView)
-//        scrollView.addSubview(whereWillBeView)
         scrollView.addSubview(detailsPriceView)
         scrollView.addSubview(detailsDepartView)
         scrollView.addSubview(detailLanguageView)
         scrollView.addSubview(detailTransportationView)
-//        scrollView.addSubview(detailWearView)
         scrollView.addSubview(priceIncludesView)
         scrollView.addSubview(priceExcludesView)
         scrollView.addSubview(bookButton)
@@ -104,7 +85,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     }
     func setupConstraints() {
         mainDescriptionView <- [
-            Height(400),
+            Height(350),
             Width().like(view),
             Top(0),
             CenterX(0)
@@ -121,12 +102,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(10).to(aboutHostView),
             CenterX(0)
         ]
-//        whereWillBeView <- [
-//            Height(300),
-//            Width().like(view),
-//            Top(10).to(whatWeWillDoView),
-//            CenterX(0)
-//        ]
         detailsPriceView <- [
             Height(32),
             Width().like(view),
@@ -151,12 +126,6 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             Top(1).to(detailLanguageView),
             CenterX(0)
         ]
-//        detailWearView <- [
-//            Height(96),
-//            Width().like(view),
-//            Top(1).to(detailTransportationView),
-//            CenterX(0)
-//        ]
         priceIncludesView <- [
             Height(64),
             Width().like(view),
@@ -185,17 +154,15 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
             mainDescriptionView.durationLabel.text=String(describing: temp) + " hours"
         }
         mainDescriptionView.peopleLabel.text = tour?.amountOfPeople
-//        aboutHostView.hostImage.loadImage(urlString: staticURL+(tour?.hostLogoUrl)!)
-//        aboutHostView.hostName.text = tour?.hostName
-//        aboutHostView.hostOverview.text = tour?.hostDescription
+        aboutHostView.hostImage.loadImage(urlString: (tour?.hostLogoUrl)!)
+        aboutHostView.hostName.text = tour?.hostName
+        aboutHostView.hostOverview.text = tour?.hostDescription
         whatWeWillDoView.eventOverview.text = tour?.fullDescription
-        
         detailsPriceView.priceView.text = tour?.price
         detailLanguageView.languageTextView.text = tour?.languages
         detailTransportationView.transportationTextView.text = tour?.transportation
         priceIncludesView.priceIncludesTextView.text = tour?.priceIncludes
         priceExcludesView.priceExcludesTextView.text = tour?.priceExcludes
-        
         setupViews()
         setupConstraints()
     }

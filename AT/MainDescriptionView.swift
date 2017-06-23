@@ -11,7 +11,7 @@ import EasyPeasy
 import LBTAComponents
 import Device
 
-class MainDescriptionView: DatasourceCell {
+class MainDescriptionView: UIView {
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -36,17 +36,11 @@ class MainDescriptionView: DatasourceCell {
         label.numberOfLines = 0
         return label
     }()
-    let tourType: UILabel = {
-        let label = UILabel()
-        label.text = "Nature&Mountains"
-        label.font = UIFont.avenirMedium(fontSize: 14)
-        return label
-    }()
-    let ratingLabel: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        return label
-    }()
+//    let ratingLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = ""
+//        return label
+//    }()
     let peopleImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "people")
@@ -76,11 +70,10 @@ class MainDescriptionView: DatasourceCell {
         label.text = "2"
         return label
     }()
-       override func setupViews() {
+    func setupViews() {
         addSubview(tourImageView)
         addSubview(nameLabel)
-        addSubview(tourType)
-        addSubview(ratingLabel)
+//        addSubview(ratingLabel)
         addSubview(peopleImage)
         addSubview(peopleLabel)
         addSubview(peopleText)
@@ -105,20 +98,15 @@ class MainDescriptionView: DatasourceCell {
             Right(10),
             Left(10)
         ]
-        tourType <- [
-            Top(0).to(nameLabel),
-            Right(10),
-            Left(10)
-        ]
-        ratingLabel <- [
-            Top(8).to(tourType),
-            Right(10),
-            Left(10)
-        ]
+//        ratingLabel <- [
+//            Top(8).to(tourType),
+//            Right(10),
+//            Left(10)
+//        ]
         peopleImage <- [
             Height(50),
             Width(80),
-            Top(12).to(ratingLabel),
+            Top(12).to(nameLabel),
             CenterX(-69.0)
         ]
         peopleLabel <- [
@@ -131,7 +119,7 @@ class MainDescriptionView: DatasourceCell {
         ]
         durationImage <- [
             Size(50),
-            Top(12).to(ratingLabel),
+            Top(12).to(nameLabel),
             CenterX(69.0)
         ]
         durationLabel <- [

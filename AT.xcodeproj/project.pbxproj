@@ -246,8 +246,6 @@
 			children = (
 				8E071A671E715E7A002F8FC6 /* AttractionMainCell.swift */,
 				8ED9BD9D1EFA56F400B67A45 /* AttractionCells */,
-				8E7868A91E7A94740094C2C4 /* HeaderCell.swift */,
-				8E7868AB1E7A94BB0094C2C4 /* FooterCell.swift */,
 			);
 			name = AttractionViews;
 			sourceTree = "<group>";
@@ -255,12 +253,14 @@
 		8ED9BD9D1EFA56F400B67A45 /* AttractionCells */ = {
 			isa = PBXGroup;
 			children = (
+				8E7868A91E7A94740094C2C4 /* HeaderCell.swift */,
 				8E071A5F1E715DB1002F8FC6 /* AttractionImagesCell.swift */,
 				8E50A8291ECF1ACA0004C2E4 /* AttrImageCollectionViewCell.swift */,
 				8E071A5C1E715D87002F8FC6 /* AttractionOverviewCell.swift */,
 				8E071A611E715DE4002F8FC6 /* ToursAndActivitiesCell.swift */,
 				8E071A631E715E03002F8FC6 /* AttractionReviewsCell.swift */,
 				8E071A651E715E1C002F8FC6 /* AttractionLocationCell.swift */,
+				8E7868AB1E7A94BB0094C2C4 /* FooterCell.swift */,
 			);
 			name = AttractionCells;
 			sourceTree = "<group>";

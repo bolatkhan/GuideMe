@@ -27,21 +27,16 @@ class WhereWillBeView: UIView {
         label.font = UIFont.avenirMedium(fontSize: 24)
         return label
     }()
-    
-    
     let eventOverview: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "YourHost.com has been an important and valuable partner in extending our ministry reach through media streaming services, allowing us to take the gospel to the uttermost parts of the world. Using affordable turnkey streaming solutions, they have held our hand and helped us simplify"
-        //        textView.backgroundColor = .clear
         textView.isEditable = false
         textView.isScrollEnabled = false
 
         return textView
     }()
-    
-    
     func setupViews() {
         addSubview(headerLabel)
         addSubview(eventOverview)
@@ -63,5 +58,4 @@ class WhereWillBeView: UIView {
             CenterX(0)
         ]
     }
-    
 }

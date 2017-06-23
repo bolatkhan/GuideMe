@@ -26,7 +26,6 @@ class DetailWhatToWearView: UIView {
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "What to wear"
-        //        textView.backgroundColor = .clear
         return textView
     }()
     let wearTextView: UITextView = {

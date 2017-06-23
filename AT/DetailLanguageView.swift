@@ -21,14 +21,11 @@ class DetailLanguageView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
     let languageLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
         textView.textColor = .black
         textView.text = "Languages"
-        //        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -38,14 +35,10 @@ class DetailLanguageView: UIView {
         textView.textColor = .black
         textView.text = "English, Russian"
         textView.textAlignment = .right
-        //        textView.backgroundColor = .clear
         textView.isEditable = false
         textView.isScrollEnabled = false
-
         return textView
     }()
-    
-    
     func setupViews() {
         addSubview(languageLabel)
         addSubview(languageTextView)
@@ -66,6 +59,5 @@ class DetailLanguageView: UIView {
             Bottom(0)
         ]
     }
-    
 }
 

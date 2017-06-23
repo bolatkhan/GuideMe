@@ -20,8 +20,6 @@ class DetailsPriceView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    
     let priceLabel: UILabel = {
         let textView = UILabel()
         textView.font = UIFont.avenirMedium(fontSize: 14)
@@ -29,7 +27,6 @@ class DetailsPriceView: UIView {
         textView.text = "Price per person"
         return textView
     }()
-    
     let priceView: UITextView = {
         let textView = UITextView()
         textView.font = UIFont.avenirMedium(fontSize: 14)
@@ -40,8 +37,6 @@ class DetailsPriceView: UIView {
         textView.textAlignment = .right
         return textView
     }()
-
-
     func setupViews() {
         addSubview(priceLabel)
         addSubview(priceView)
@@ -62,5 +57,4 @@ class DetailsPriceView: UIView {
            Bottom(0)
         ]
     }
-    
 }

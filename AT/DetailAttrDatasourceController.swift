@@ -30,7 +30,7 @@ class DetailAttrDatasourceController: DatasourceController {
         guard let attraction = attraction else { return }
         let detailDatasource = DetailDatasource()
         tour.forEach { (tour) in
-            detailDatasource.tours += [Tour(id: tour.id, transportation: tour.transportation, tourImageUrls: tour.tourImageUrls!, connectedPlaces: tour.connectedPlaces, durationType: tour.durationType, duration: tour.duration, amountOfPeople: tour.amountOfPeople, name: tour.name, price: tour.price, fullDescription: tour.fullDescription, languages: tour.languages, priceIncludes: tour.priceIncludes, priceExcludes: tour.priceExcludes)]
+            detailDatasource.tours += [Tour(id: tour.id, transportation: tour.transportation, tourImageUrls: tour.tourImageUrls!, connectedPlaces: tour.connectedPlaces, durationType: tour.durationType, duration: tour.duration, amountOfPeople: tour.amountOfPeople, name: tour.name, price: tour.price, fullDescription: tour.fullDescription, languages: tour.languages, priceIncludes: tour.priceIncludes, priceExcludes: tour.priceExcludes, hostName: tour.hostName, hostLogoUrl: tour.hostLogoUrl, hostDescription: tour.hostDescription)]
         }
         detailDatasource.attraction = [Attraction(id: "", name: attraction.name, shortDescription: attraction.shortDescription, attractionImageUrls: attraction.attractionImageUrls, fullDescription: attraction.fullDescription)]
         detailDatasource.overview = [Overview(tourDescription: attraction.fullDescription!)]
@@ -43,11 +43,10 @@ class DetailAttrDatasourceController: DatasourceController {
             var tours = [Tour]()
             let array = json[].array
             for tourJson in array! {
-                //let tourHost = tourJson["host"].dictionary
-                //let hostName = tourHost?["name"]?.stringValue
-                //let hostLogoUrl = tourHost?["logo"]?.stringValue
-                //let hostNumber = tourHost?["phone_number"]?.intValue
-                //let hostDescription = tourHost?["description"]?.stringValue
+                let tourHost = tourJson["host"].dictionary
+                let hostName = tourHost?["name"]?.stringValue
+                let hostLogoUrl = tourHost?["logo"]?.stringValue
+                let hostDescription = tourHost?["info"]?.stringValue
                 let id = tourJson["id"].intValue
                 let transportation = tourJson["transportation"].stringValue
                 let tourImageUrl = tourJson["images"].arrayObject as? [String]
@@ -63,7 +62,7 @@ class DetailAttrDatasourceController: DatasourceController {
                 let priceIncludes = tourJson["price_includes"].stringValue
                 let priceExcludes = tourJson["price_excludes"].stringValue
                 
-                let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrl!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes)
+                let tour = Tour(id: id, transportation: transportation, tourImageUrls: tourImageUrl!, connectedPlaces: connectedPlaces, durationType: durationType, duration: duration, amountOfPeople: amountOfPeople, name: name, price: pricePerPerson, fullDescription: fullDescription, languages: languages, priceIncludes: priceIncludes, priceExcludes: priceExcludes, hostName:hostName, hostLogoUrl: hostLogoUrl, hostDescription: hostDescription )
                 tours.append(tour)
             }
             self.tours = tours
