@@ -62,7 +62,7 @@ class MainDescriptionView: UIView {
     }()
     let peopleText: UILabel = {
         let label = UILabel()
-        label.text = "человек"
+        label.text = "people"
         return label
     }()
     let durationLabel: UILabel = {

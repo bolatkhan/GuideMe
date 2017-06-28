@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E02EF261E2E311600AB0CF4"
-               BuildableName = "AT.app"
-               BlueprintName = "AT"
+               BuildableName = "Almaty Tour.app"
+               BlueprintName = "Almaty Tour"
                ReferencedContainer = "container:AT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E02EF261E2E311600AB0CF4"
-            BuildableName = "AT.app"
-            BlueprintName = "AT"
+            BuildableName = "Almaty Tour.app"
+            BlueprintName = "Almaty Tour"
             ReferencedContainer = "container:AT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E02EF261E2E311600AB0CF4"
-            BuildableName = "AT.app"
-            BlueprintName = "AT"
+            BuildableName = "Almaty Tour.app"
+            BlueprintName = "Almaty Tour"
             ReferencedContainer = "container:AT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E02EF261E2E311600AB0CF4"
-            BuildableName = "AT.app"
-            BlueprintName = "AT"
+            BuildableName = "Almaty Tour.app"
+            BlueprintName = "Almaty Tour"
             ReferencedContainer = "container:AT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -69,7 +69,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         self.title = "Tour Overview"
         self.scrollView = UIScrollView()
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1355)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1265)
         scrollView.addSubview(mainDescriptionView)
         scrollView.addSubview(aboutHostView)
         scrollView.addSubview(whatWeWillDoView)
@@ -158,7 +158,9 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         aboutHostView.hostName.text = tour?.hostName
         aboutHostView.hostOverview.text = tour?.hostDescription
         whatWeWillDoView.eventOverview.text = tour?.fullDescription
-        detailsPriceView.priceView.text = tour?.price
+        if let myPrice = tour?.price {
+            detailsPriceView.priceView.text = "$" + (myPrice)
+        }
         detailLanguageView.languageTextView.text = tour?.languages
         detailTransportationView.transportationTextView.text = tour?.transportation
         priceIncludesView.priceIncludesTextView.text = tour?.priceIncludes

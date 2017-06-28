@@ -15,6 +15,8 @@ target 'AT' do
    pod 'Device', '~> 3.0.1'
    pod 'Reusable'
    pod 'Kingfisher', '~> 3.0'
+   pod 'Moya'
+
  
    
 end

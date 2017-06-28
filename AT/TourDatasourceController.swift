@@ -35,7 +35,7 @@ class TourDatasourceController: DatasourceController {
             self.tours = (tourDatasource?.tours)!
         }
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image:#imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "search"), style: .plain, target: self, action: nil )
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: nil, style: .plain, target: self, action: nil )
         //        #selector(presentSearchViewController)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white

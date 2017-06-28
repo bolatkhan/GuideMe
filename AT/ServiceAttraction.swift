@@ -13,10 +13,7 @@ import SwiftyJSON
 struct ServiceAttraction {
     
     let tron = TRON(baseURL: "http://108.61.179.192/")
-
-
     static let sharedInstance = ServiceAttraction()
-    
     func fetchAttrFeed(completion: @escaping (AttractionDatasource?, Error? ) -> ()) {
         let request: APIRequest<AttractionDatasource, JSONError> = tron.request("api/places")
         request.perform(withSuccess: { (attractionDatasource) in
@@ -25,8 +22,6 @@ struct ServiceAttraction {
             completion(nil, err)
          }
     }
-    
-       
     class JSONError: JSONDecodable {
         required init(json: JSON) throws {
             print("JSON ERROR")

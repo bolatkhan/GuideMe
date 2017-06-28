@@ -55,11 +55,12 @@
 		8EBDA9FB1E72705A00571F9C /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FA1E72705A00571F9C /* Attraction.swift */; };
 		8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBDA9FC1E7270B300571F9C /* Tour.swift */; };
 		8EBEE2FF1E9C9F5A006ED508 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEE2FE1E9C9F5A006ED508 /* TourViewController.swift */; };
+		8ED9BDA21F011F5A00B67A45 /* ATapi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9BDA11F011F5A00B67A45 /* ATapi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63C228BAC3E41D5732D18D37 /* Pods_AT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E02EF271E2E311600AB0CF4 /* AT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E02EF271E2E311600AB0CF4 /* Almaty Tour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Almaty Tour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E02EF2A1E2E311600AB0CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E02EF321E2E311600AB0CF4 /* AT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AT.xcdatamodel; sourceTree = "<group>"; };
 		8E02EF371E2E311600AB0CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		8EBDA9FA1E72705A00571F9C /* Attraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		8EBDA9FC1E7270B300571F9C /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		8EBEE2FE1E9C9F5A006ED508 /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		8ED9BDA11F011F5A00B67A45 /* ATapi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATapi.swift; sourceTree = "<group>"; };
 		A034DC7DC8A2212861FF01D2 /* Pods-AT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.debug.xcconfig"; sourceTree = "<group>"; };
 		E482F0BB719B01305FC9DD88 /* Pods-AT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AT.release.xcconfig"; path = "Pods/Target Support Files/Pods-AT/Pods-AT.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +148,7 @@
 		8E02EF281E2E311600AB0CF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E02EF271E2E311600AB0CF4 /* AT.app */,
+				8E02EF271E2E311600AB0CF4 /* Almaty Tour.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 			children = (
 				8E8D0A731E7C0B6B00E7104C /* ServiceAttraction.swift */,
 				8E50A8211ECDAAB50004C2E4 /* ServiceTour.swift */,
+				8ED9BDA11F011F5A00B67A45 /* ATapi.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -207,11 +210,11 @@
 		8EB9A3531E39AF5900CE0298 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8ED9BD9F1EFA5B7600B67A45 /* AttractionViewControllers */,
+				8ED9BDA01EFA5B8800B67A45 /* TourViewController */,
 				8E1FFE941EAA07A300470D7B /* BookNowViewController.swift */,
 				8E67927F1E38764E00F9CDB1 /* LeftViewController.swift */,
 				8EB9A3491E38946700CE0298 /* SearchViewController.swift */,
-				8ED9BDA01EFA5B8800B67A45 /* TourViewController */,
-				8ED9BD9F1EFA5B7600B67A45 /* AttractionViewControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,9 +316,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E02EF261E2E311600AB0CF4 /* AT */ = {
+		8E02EF261E2E311600AB0CF4 /* Almaty Tour */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E02EF3C1E2E311600AB0CF4 /* Build configuration list for PBXNativeTarget "AT" */;
+			buildConfigurationList = 8E02EF3C1E2E311600AB0CF4 /* Build configuration list for PBXNativeTarget "Almaty Tour" */;
 			buildPhases = (
 				F2F4EE0C72546E3B77B73A94 /* [CP] Check Pods Manifest.lock */,
 				8E02EF231E2E311600AB0CF4 /* Sources */,
@@ -328,9 +331,9 @@
 			);
 			dependencies = (
 			);
-			name = AT;
+			name = "Almaty Tour";
 			productName = AT;
-			productReference = 8E02EF271E2E311600AB0CF4 /* AT.app */;
+			productReference = 8E02EF271E2E311600AB0CF4 /* Almaty Tour.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -345,12 +348,12 @@
 				TargetAttributes = {
 					8E02EF261E2E311600AB0CF4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = H9RCATFXKX;
+						DevelopmentTeam = AB65P3C5XF;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 8E02EF221E2E311600AB0CF4 /* Build configuration list for PBXProject "AT" */;
+			buildConfigurationList = 8E02EF221E2E311600AB0CF4 /* Build configuration list for PBXProject "Almaty Tour" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -363,7 +366,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E02EF261E2E311600AB0CF4 /* AT */,
+				8E02EF261E2E311600AB0CF4 /* Almaty Tour */,
 			);
 		};
 /* End PBXProject section */
@@ -462,6 +465,7 @@
 				8EBDA9FD1E7270B300571F9C /* Tour.swift in Sources */,
 				8E8C08C31EA72BA700B06616 /* DetailDepartView.swift in Sources */,
 				8EB9A34A1E38946700CE0298 /* SearchViewController.swift in Sources */,
+				8ED9BDA21F011F5A00B67A45 /* ATapi.swift in Sources */,
 				8E7868B21E7AA1330094C2C4 /* Reviews.swift in Sources */,
 				8E071A6A1E715EF1002F8FC6 /* DetailDatasource.swift in Sources */,
 				8E02EF331E2E311600AB0CF4 /* AT.xcdatamodeld in Sources */,
@@ -603,11 +607,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = H9RCATFXKX;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
+				"DEVELOPMENT_TEAM[sdk=*]" = AB65P3C5XF;
 				INFOPLIST_FILE = AT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = multispace.AT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlmatyTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -619,11 +624,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = H9RCATFXKX;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
+				"DEVELOPMENT_TEAM[sdk=*]" = AB65P3C5XF;
 				INFOPLIST_FILE = AT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = multispace.AT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlmatyTour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -632,7 +638,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E02EF221E2E311600AB0CF4 /* Build configuration list for PBXProject "AT" */ = {
+		8E02EF221E2E311600AB0CF4 /* Build configuration list for PBXProject "Almaty Tour" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E02EF3A1E2E311600AB0CF4 /* Debug */,
@@ -641,7 +647,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E02EF3C1E2E311600AB0CF4 /* Build configuration list for PBXNativeTarget "AT" */ = {
+		8E02EF3C1E2E311600AB0CF4 /* Build configuration list for PBXNativeTarget "Almaty Tour" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E02EF3D1E2E311600AB0CF4 /* Debug */,

@@ -9,6 +9,12 @@ PODS:
   - EasyPeasy (1.4)
   - Kingfisher (3.6.1)
   - LBTAComponents (0.1.9)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.1)
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
     - Reusable/View (= 4.0.0)
@@ -34,6 +40,7 @@ DEPENDENCIES:
   - EasyPeasy
   - Kingfisher (~> 3.0)
   - LBTAComponents
+  - Moya
   - Reusable
   - TRON (~> 2.0.0)
   - Typist
@@ -56,11 +63,13 @@ SPEC CHECKSUMS:
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
   Kingfisher: 2f31cb75f3e98d3d4c406cbdcd9b263e956cfa67
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TRON: 7b9adeb678fe0e25433d207f6a734aaf145fa9b5
   Typist: 470a4f47f4e635ccd0e9f3ff9ce2d70c9e6001a5
 
-PODFILE CHECKSUM: ab3704e7beb78c9bf3d74810ff7f63678bf7d399
+PODFILE CHECKSUM: 48f2d9164af1114206f21fd9aae3bae54be32c97
 
 COCOAPODS: 1.2.0
