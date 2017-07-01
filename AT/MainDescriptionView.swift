@@ -70,6 +70,12 @@ class MainDescriptionView: UIView {
         label.text = "2"
         return label
     }()
+    let durationType: UILabel = {
+        let label = UILabel()
+        label.text = "hours"
+        return label
+    }()
+
     func setupViews() {
         addSubview(tourImageView)
         addSubview(nameLabel)
@@ -80,6 +86,8 @@ class MainDescriptionView: UIView {
         
         addSubview(durationImage)
         addSubview(durationLabel)
+        addSubview(durationType)
+
         setupConstraints()
         
         backgroundColor = .white
@@ -124,7 +132,11 @@ class MainDescriptionView: UIView {
         ]
         durationLabel <- [
             Top(6).to(durationImage),
-            CenterX(69.0)
+            CenterX(48.0)
+        ]
+        durationType <- [
+            Top(6).to(durationImage),
+            Left(5).to(durationLabel)
         ]
     }
 }

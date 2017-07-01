@@ -193,14 +193,24 @@ class BookNowViewController: UIViewController {
                     do {
                         let data = try response.mapJSON()
                         let statusCode = response.statusCode
-                        print(statusCode)
+                        print("Status code: \(statusCode)")
                         if statusCode == 201 {
                             let alertController = UIAlertController(title: "Success", message: "Your request successfully submitter, we will contact your soon", preferredStyle: .alert)
                             let OKaction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alertController.addAction(OKaction)
                             self.present(alertController, animated: true, completion: nil)
+                            self.nameTextField.text = ""
+                            self.emailTextField.text = ""
+                            self.numberTextField.text = ""
+                            self.msgTextField.text = ""
+                            
                         }
-                        print(data)
+                        print("Response data \(data)")
+                        let alertController = UIAlertController(title: "Error", message: "Enter a valid email address.", preferredStyle: .alert)
+                        let OKaction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(OKaction)
+                        self.present(alertController, animated: true, completion: nil)
+
                     }catch{
                         print("Sorry, ")
                         }

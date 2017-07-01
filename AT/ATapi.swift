@@ -10,7 +10,6 @@ import Moya
 enum ATapi {
     case makeRequest(fullName: String, email: String, phoneNumber: String, message: String, tour: Int)
 }
-
 // MARK: - TargetType Protocol Implementation
 extension ATapi: TargetType {
     var baseURL: URL { return URL(string: "http://108.61.179.192/")! }
