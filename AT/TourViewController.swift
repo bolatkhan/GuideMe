@@ -156,6 +156,7 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
         if let temp = tour?.durationType {
             mainDescriptionView.durationType.text=String(describing: temp)
         }
+//        mainDescriptionView.durationType.text = tour?.durationType
         mainDescriptionView.peopleLabel.text = "Max: " + (tour?.amountOfPeople)!
         aboutHostView.hostImage.loadImage(urlString: (tour?.hostLogoUrl)!)
         aboutHostView.hostName.text = tour?.hostName

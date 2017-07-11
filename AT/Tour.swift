@@ -13,7 +13,7 @@ struct Tour {
     let transportation: String?
     let tourImageUrls: [String]?
     let connectedPlaces: String?
-    let durationType: String?
+    let durationType: String
     let duration: Int
     let amountOfPeople: String?
     let name: String
