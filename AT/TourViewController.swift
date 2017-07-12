@@ -22,8 +22,15 @@ class TourViewController: UIViewController, UIScrollViewDelegate {
     }()
     lazy var aboutHostView: AboutHostView = {
         let view = AboutHostView()
+        let gesture = UITapGestureRecognizer()
+//        gesture.addTarget(self, action: #selector())
+//        view.addGestureRecognizer(gesture)
         return view
     }()
+//    func presentHostViewController() {
+//        let vc = HostViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     lazy var whatWeWillDoView: WhatWeWillDoView = {
         let view = WhatWeWillDoView()
         return view
